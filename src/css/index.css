@@ -4,9 +4,6 @@
   | default @import url()
   |============================
 */
-@import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -23,3 +20,17 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+
+
+@import url('./reset.css');
+@import url('./header.css');
+@import url('./all-categories.css');
+@import url('./support.css');
+@import url('./best-sellers.css');
+@import url('./filtered.css');
+@import url('./modal-window.css');
+
+
+
+
