@@ -1,0 +1,16 @@
+.all-categories {
+  height: 228px;
+  width: 335px;
+  overflow-y: scroll;
+}
+.all-categories li:hover,
+.all-categories li:focus {
+  text-transform: uppercase;
+  color: #4f2ee8;
+}
+.list-category {
+  margin-bottom: 24px;
+}
+.all-categories ::-webkit-scrollbar {
+  width: 8px;
+}
