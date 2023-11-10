@@ -49,32 +49,55 @@ const charities = [
   ];
   
   
-  function renderCharities() {
+    function renderCharities() {
     const charitySection = document.getElementById('charity-section');
+
+    const charityListContainer = document.createElement('div');
+    charityListContainer.classList.add('charity-list-container'); 
   
-    charities.forEach(charity => {
-      
-      const charityBlock = document.createElement('div');
-      charityBlock.classList.add('charity-block');
+    const charityList = document.createElement('ul');
+    charityList.classList.add('charity-list');
+
+    charities.forEach((charity, index) => {
+    
+    const listItem = document.createElement('li');
+    listItem.classList.add('charity-list-li');
+
+    const charityLink = document.createElement('a');
+    charityLink.classList.add('charity-link');
+    charityLink.href = charity.url;
+
+   
+    const logoImg = document.createElement('img');
+    logoImg.classList.add('charity-logo');
+    logoImg.src = charity.img;
+    logoImg.alt = charity.title;
+
+    const numberSpan = document.createElement('span');
+    numberSpan.classList.add('charity-number');
+    numberSpan.textContent = (index + 1).toString().padStart(2, '0');
+
+    charityLink.appendChild(numberSpan);
+    charityLink.appendChild(logoImg);
+    listItem.appendChild(charityLink);
+    charityList.appendChild(listItem);
+  });
+
+  charityListContainer.appendChild(charityList);
   
-      
-      const logoImg = document.createElement('img');
-      logoImg.classList.add('charity-logo');
-      logoImg.src = charity.img; 
-      logoImg.alt = charity.title;
-  
-      
-      charityBlock.appendChild(logoImg);
-  
-      const titleLink = document.createElement('a');
-      titleLink.href = charity.url;
-      titleLink.textContent = charity.title;
-      charityBlock.appendChild(titleLink);
-  
-      
-      charitySection.appendChild(charityBlock);
-    });
-  }
-  
- 
-  renderCharities();
+  charitySection.appendChild(charityListContainer);
+
+const scrollButton = document.createElement('button');
+  scrollButton.textContent = 'Up';
+  scrollButton.classList.add('scroll-button');
+
+  charitySection.appendChild(scrollButton);
+
+
+  scrollButton.addEventListener('click', () => {
+    const scrollAmount = Math.min(3, charities.length - 6) * 100;
+    charityListContainer.scrollTop += scrollAmount;
+  });
+}
+
+renderCharities();
