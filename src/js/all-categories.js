@@ -13,11 +13,13 @@ function fetchAllCategories() {
 fetchAllCategories()
   .then(data => {
     data
+      .sort((a, b) => (a.list_name > b.list_name ? 1 : -1))
       .map(list => {
         const { list_name } = list;
+
         return allList.insertAdjacentHTML(
           `beforeend`,
-          `<li class="list-category">${list_name}</li>`
+          `<li class="list-category"><a href="">${list_name}</a></li>`
         );
       })
       .join(``);
