@@ -89,11 +89,7 @@
     padding: 0; 
     margin: 0; 
   }
-  
-  .charity-list.showing-items-4-9 {
-    max-height: 1000px; 
-  }
-  
+
   
   .charity-list.showing-items-4-9 .charity-list-li {
     display: block; 
@@ -130,7 +126,7 @@
 }
 @media screen and (min-width: 768px) {
     .support-button {
-        margin: 0 149px 148px 24px;
+        margin: 0 149px 24px 148px ;
     }
 }
 @media screen and (min-width: 1280px) {
