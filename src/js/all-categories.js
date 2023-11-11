@@ -1,16 +1,7 @@
-const BASE_URL = `https://books-backend.p.goit.global/`;
+import { getCategoryList } from './images-api';
 const allList = document.querySelector(`.all-categories`);
 
-function fetchAllCategories() {
-  return fetch(`${BASE_URL}books/category-list`).then(resp => {
-    if (!resp.ok) {
-      throw new Error(resp.status);
-    }
-    return resp.json();
-  });
-}
-
-fetchAllCategories()
+getCategoryList()
   .then(data => {
     data
       .sort((a, b) => (a.list_name > b.list_name ? 1 : -1))
