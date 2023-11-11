@@ -26,23 +26,19 @@ function nameCategories(e) {
   if (categoriesName) {
     getCategory(categoriesName)
       .then(data => {
-        data
-          .map((list, i) => {
-            console.dir(i);
-            return (listCategory.innerHTML = createMarkup(list));
-          })
+        const listItem = data
+          .map(
+            ({ book_image, title, author }) => `
+          <img src="${book_image}" alt="${title}" width="180px" height="256px" />
+          <p>${title}</p>
+          <p>${author}</p>
+        `
+          )
           .join(``);
+
+        return (listCategory.innerHTML = listItem);
       })
       .catch(err => console.log(err));
   } else {
   }
-}
-
-function createMarkup(list) {
-  const { book_image, title, author } = list;
-  return `
-          <img src="${book_image}" alt="${title}" width="180px" height="256px" />
-          <p>${title}</p>
-          <p>${author}</p>
-        `;
 }
