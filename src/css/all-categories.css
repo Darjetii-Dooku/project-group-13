@@ -6,20 +6,18 @@
   background: #e0e0e0;
 }
 .all-categories {
-  display: flex;
   width: 307px;
   height: 228px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
   overflow-y: auto;
   padding-right: 28px;
   margin-left: auto;
   margin-right: auto;
 }
+.all-categories li {
+  margin-bottom: 24px;
+}
 @media only screen and (min-width: 767px) {
   .all-categories {
-    gap: 32px;
     margin: 0;
     width: 309px;
     height: 472px;
@@ -35,7 +33,8 @@
   }
 }
 .all-categories li:hover,
-.all-categories li:focus {
+.all-categories li:focus,
+.all-categories li:active {
   text-transform: uppercase;
   color: #4f2ee8;
   box-sizing: border-box;
