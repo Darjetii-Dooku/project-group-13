@@ -1,6 +1,6 @@
-import"./assets/support-35a9e972.js";const s="https://books-backend.p.goit.global/";function l(){return fetch(`${s}books/top-books`).then(t=>{if(!t.ok)throw new Error(t.status);return t.json()})}l().then(t=>{const o=document.querySelector(".book-category-list");t.forEach(r=>{const c=document.createElement("h3");c.textContent=`Category - ${r.list_name}`.toUpperCase();const a=document.createElement("ul");r.books.forEach(e=>{const i=document.createElement("li");i.innerHTML=`
-          <img src="${e.book_image}" alt="${e.title}" width="180px" height="256px" />
-          <p>${e.title}</p>
-          <p>${e.author}</p>
-        `,a.appendChild(i)}),o.appendChild(c),o.appendChild(a);const n=document.createElement("button");n.type="button",n.textContent="See More",o.appendChild(n)})}).catch(t=>console.error("Error fetching data:",t));
+import"./assets/support-35a9e972.js";const i="https://books-backend.p.goit.global/";function l(){return fetch(`${i}books/category-list`).then(t=>{if(!t.ok)throw new Error(t.status);return t.json()})}function h(){return fetch(`${i}books/top-books`).then(t=>{if(!t.ok)throw new Error(t.status);return t.json()})}const u=document.querySelector(".all-categories");l().then(t=>{t.sort((e,o)=>e.list_name>o.list_name?1:-1).map(e=>{const{list_name:o}=e;return u.insertAdjacentHTML("beforeend",`<li class="list-category"><a href="">${o}</a></li>`)}).join("")}).catch(t=>console.log(t));h().then(t=>{const e=document.querySelector(".book-category-list");t.forEach(o=>{const c=document.createElement("h3");c.textContent=`Category - ${o.list_name}`.toUpperCase();const a=document.createElement("ul");o.books.forEach(n=>{const s=document.createElement("li");s.innerHTML=`
+          <img src="${n.book_image}" alt="${n.title}" width="180px" height="256px" />
+          <p>${n.title}</p>
+          <p>${n.author}</p>
+        `,a.appendChild(s)}),e.appendChild(c),e.appendChild(a);const r=document.createElement("button");r.type="button",r.textContent="See More",e.appendChild(r)})}).catch(t=>console.error("Error fetching data:",t));
 //# sourceMappingURL=commonHelpers.js.map
