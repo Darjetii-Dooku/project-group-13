@@ -1,42 +1,63 @@
-const BASE_URL = `https://books-backend.p.goit.global/`;
+import axios from 'axios';
 
-function getCategoryList() {
-  return fetch(`${BASE_URL}books/category-list`).then(resp => {
-    if (!resp.ok) {
-      throw new Error(resp.status);
-    }
-    return resp.json();
-  });
+const BASE_URL = 'https://books-backend.p.goit.global/';
+
+function handleResponse(response) {
+  if (!response.data) {
+    throw new Error('Invalid response format');
+  }
+  return response.data;
 }
 
-function getTopBooks() {
-  return fetch(`${BASE_URL}books/top-books`).then(resp => {
-    if (!resp.ok) {
-      throw new Error(resp.status);
-    }
-    return resp.json();
-  });
+function handleError(error) {
+  if (error.response) {
+    throw new Error(`Request failed with status ${error.response.status}`);
+  } else if (error.request) {
+    throw new Error('No response received from the server');
+  } else {
+    throw new Error(`Error setting up the request: ${error.message}`);
+  }
 }
 
-function getCategory(listname) {
-  return fetch(`${BASE_URL}books/category?category=${listname}`).then(resp => {
-    if (!resp.ok) {
-      throw new Error(resp.status);
-    }
-    return resp.json();
-  });
+async function getCategoryList() {
+  try {
+    const response = await axios.get(`${BASE_URL}books/category-list`);
+    return handleResponse(response);
+  } catch (error) {
+    handleError(error);
+  }
 }
 
-function getBooksById(id) {
-  return fetch(`${BASE_URL}books/${id}`).then(resp => {
-    if (!resp.ok) {
-      throw new Error(resp.status);
-    }
-    return resp.json();
-  });
+async function getTopBooks() {
+  try {
+    const response = await axios.get(`${BASE_URL}books/top-books`);
+    return handleResponse(response);
+  } catch (error) {
+    handleError(error);
+  }
 }
 
-export { getCategoryList };
-export { getTopBooks };
-export { getCategory };
-export { getBooksById };
+async function getCategory(listname) {
+  try {
+    const response = await axios.get(`${BASE_URL}books/category?category=${listname}`);
+    return handleResponse(response);
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+async function getBooksById(id) {
+  try {
+    const response = await axios.get(`${BASE_URL}books/${id}`);
+    return handleResponse(response);
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+export {
+  getCategoryList,
+  getTopBooks,
+  getCategory,
+  getBooksById
+};
