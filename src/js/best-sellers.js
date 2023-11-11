@@ -1,4 +1,4 @@
-import { getTopBooks } from "/src/js/images-api"
+import { getTopBooks } from "./images-api"
 
 getTopBooks()
 .then(data => {
