@@ -87,17 +87,35 @@ const charities = [
   
   charitySection.appendChild(charityListContainer);
 
-const scrollButton = document.createElement('button');
-  scrollButton.textContent = 'Up';
-  scrollButton.classList.add('scroll-button');
+  const containerHeight = 292;
+  charityListContainer.style.height = `${containerHeight}px`;
 
-  charitySection.appendChild(scrollButton);
+  const supportButton = document.createElement('button');
+  supportButton.classList.add('support-button');
 
+  const arrowIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  arrowIcon.classList.add('arrow-icon');
 
-  scrollButton.addEventListener('click', () => {
-    const scrollAmount = Math.min(3, charities.length - 6) * 100;
-    charityListContainer.scrollTop += scrollAmount;
-  });
+  const useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    useElement.setAttribute('href', '../css/sprite.svg#support-icon'); 
+    arrowIcon.appendChild(useElement);
+
+    supportButton.appendChild(arrowIcon);
+    charitySection.appendChild(supportButton);
+
+    supportButton.addEventListener('click', () => {
+        charityListContainer.classList.toggle('showing-items-4-9');
+
+        arrowIcon.classList.toggle('arrow-rotate', charityListContainer.classList.contains('showing-items-4-9'));
+
+        if (charityListContainer.classList.contains('showing-items-4-9')) 
+        {
+            charityListContainer.scrollTop = containerHeight;
+        } else {
+            charityListContainer.scrollTop = 0;
+        }
+    });
 }
+
 
 renderCharities();
