@@ -6,7 +6,7 @@ h1 {
     font-weight: 700;
     line-height: 38px;
     letter-spacing: -1.28px;
-    margin-top: 0px;
+    margin-top: 40px;
     margin-bottom: 0px;
     margin-left: 20px;
 }
@@ -36,18 +36,24 @@ img {
     border-radius: 8px;
     background: url(<path-to-image>), lightgray -4.635px -16px / 102.522% 106.839% no-repeat;
     margin-bottom: 14px;
+    position: relative;
+    max-width: 100%;
 }
 
 .book-category-list {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    /* min-width: 320px;
-    max-width: 375px; */
+    min-width: 320px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.book-category-list .bs-book-item:nth-child(n+2) {
+    display: none;
 }
 
 /* ul */
@@ -55,6 +61,7 @@ img {
     list-style: none;
     padding: 0;
     margin: 0;
+    justify-content: space-between;
 }
 
 /* li */
@@ -110,13 +117,13 @@ img {
     text-transform: uppercase;
 }
 
-/* Стили для планшетов с максимальной шириной 768px */
+/* Стилі для планшетів*/
 @media (min-width: 481px) and (max-width: 767px) {
     h1 {
         font-size: 48px;
         line-height: 52px;
         letter-spacing: -1.92px;
-        margin-top: 0px;
+        margin-top: 98px;
         margin-bottom: 0px;
         margin-left: 32px;
     }
@@ -135,16 +142,22 @@ img {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
+        flex-direction: row;
         margin-left: auto;
         margin-right: auto;
         padding-left: 32px;
         padding-right: 32px;
     }
+
+    .book-category-list .bs-book-item:nth-child(n+4) {
+        display: none;
+    }
+
     .bs-book-list {
         display: flex;
         gap: 25px;
         margin-bottom: 20px;
+        width: calc(33.33% - 25px);
     }
     
     .bs-book-item {
@@ -153,13 +166,13 @@ img {
 
 }
 
-/* Стили для настольных компьютеров с минимальной шириной 1158px */
+/* Стилі для комп'ютерів*/
 @media screen and (min-width: 768px) {
     h1 {
             font-size: 48px;
             line-height: 52px;
             letter-spacing: -1.92px;
-            margin-top: 0px;
+            margin-top: 40px;
             margin-bottom: 0px;
             margin-left: 40px;
         }
@@ -195,6 +208,9 @@ img {
             margin-right: auto;
             padding-left: 40px;
             padding-right: 24px;
+        }
+        .book-category-list .bs-book-item {
+            display: block;
         }
     
         .bs-book-list {
