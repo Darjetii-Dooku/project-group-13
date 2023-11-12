@@ -1,11 +1,27 @@
-.header {
+body {
+background: #F6F6F6;
+}
+
+body.dark-theme {
+  background: #202024;
+}
+
+header {
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
   background: #FFF;
   max-width: 100%;
   height: 64px;
-  background: #FFF;
 }
+
+header.dark-theme{
+  border-radius: 0px 0px 8px 8px;
+  border: 1.5px solid #111;
+  background: #111;
+  max-width: 100%;
+  height: 64px;
+}
+
 
  @media only screen and (min-width: 768px){
   .header{
@@ -158,14 +174,8 @@
 }
 
 
-body {
-  transition: background-color 0.3s ease;
-}
 
-.dark-theme {
-  background: #111;
-  color: #fff;
-}
+
 .black-icon,
 .burger-black {
   display: block;

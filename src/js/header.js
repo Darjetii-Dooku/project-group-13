@@ -7,6 +7,7 @@ const elements = {
 
 elements.theme.addEventListener('change', function () {
   elements.header.classList.toggle('dark-theme', elements.theme.checked);
+  elements.body.classList.toggle('dark-theme', elements.theme.checked);
 
   const useElement = elements.bookshelfIcon.querySelector('use');
   if (elements.theme.checked) {
@@ -17,6 +18,5 @@ elements.theme.addEventListener('change', function () {
     useElement.setAttribute('href', '/css/sprite.svg#icon-align-left');
   }
 });
-
 
 
