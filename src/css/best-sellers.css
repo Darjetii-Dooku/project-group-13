@@ -223,3 +223,35 @@ img {
             margin-bottom: 0px;
         }
 }
+ /* scroll button */
+ body, html {
+    scroll-behavior: smooth;
+}
+
+#scroll-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    display: none;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background: #4F2EE8;
+    border: none;
+    overflow: hidden;
+}
+
+.scroll-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+#scroll-btn:hover .scroll-icon {
+    transform: translateY(-10px) scale(1.2);
+}
+
+#scroll-btn:hover {
+    box-shadow: 0 0 20px rgb(79, 46, 232);
+}
