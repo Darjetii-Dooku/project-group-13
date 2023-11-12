@@ -26,19 +26,19 @@ function nameCategories(e) {
   if (categoriesName) {
     getCategory(categoriesName)
       .then(data => {
+        console.log(data);
         const listItem = data
           .map(
-            ({ book_image, title, author }) => `
+            ({ book_image, title, author, _id }) => `<div id="${_id}">
           <img src="${book_image}" alt="${title}" width="180px" height="256px" />
           <p>${title}</p>
           <p>${author}</p>
-        `
+        </div>`
           )
           .join(``);
 
         return (listCategory.innerHTML = listItem);
       })
       .catch(err => console.log(err));
-  } else {
   }
 }
