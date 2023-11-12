@@ -7,16 +7,28 @@
   background: #FFF;
 }
 
+<<<<<<< Updated upstream
  @media only screen and (min-width: 768px){
   .header{
   height: 72px;}
 } 
+=======
+@media only screen and (min-width: 768px) {
+  .header {
+    height: 72px;
+  }
+}
+>>>>>>> Stashed changes
 
 .header-underline {
   display: flex;
   align-items: center;
   justify-content: space-between;
+<<<<<<< Updated upstream
   padding:18px 20px;
+=======
+  padding: 18px 20px;
+>>>>>>> Stashed changes
 }
 
 .menu-toggle {
@@ -38,12 +50,20 @@
   }
 }
 
+<<<<<<< Updated upstream
 .theme-switch{
+=======
+.theme-switch {
+>>>>>>> Stashed changes
   margin-right: 14px;
 }
 
 @media only screen and (min-width:768px) {
+<<<<<<< Updated upstream
   .theme-switch{
+=======
+  .theme-switch {
+>>>>>>> Stashed changes
     margin-right: 240px;
   }
 }
@@ -88,10 +108,17 @@
 @media only screen and (min-width:768px) {
   .navigation {
     display: flex;
+<<<<<<< Updated upstream
       flex-direction: row;
       gap: 24px;
       justify-content: space-between;
       align-items: center;
+=======
+    flex-direction: row;
+    gap: 24px;
+    justify-content: space-between;
+    align-items: center;
+>>>>>>> Stashed changes
   }
 }
 
@@ -166,6 +193,10 @@ body {
   background: #111;
   color: #fff;
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 .black-icon,
 .burger-black {
   display: block;
@@ -202,7 +233,11 @@ body {
 }
 
 .theme-switch input:checked+label {
+<<<<<<< Updated upstream
 background: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+=======
+  background: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+>>>>>>> Stashed changes
 }
 
 .theme-switch label::after {

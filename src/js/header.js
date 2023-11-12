@@ -25,6 +25,7 @@ elements.theme.addEventListener('change', function () {
 // if (isDarkTheme) {
 //   elements.bookshelfIcon.querySelector('use').setAttribute('href', '/css/sprite.svg#icon-Bookshelf_white');
 //   elements.bookshelfIcon.querySelector('use').style.display = 'none';
+<<<<<<< Updated upstream
 // }
 
 
@@ -34,3 +35,6 @@ elements.theme.addEventListener('change', function () {
 
 
 
+=======
+// }
+>>>>>>> Stashed changes
