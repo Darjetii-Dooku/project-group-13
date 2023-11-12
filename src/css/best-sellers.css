@@ -1,4 +1,4 @@
-/* Общие стили для всех устройств */
+/* Загальні стилі */
 h1 {
     font-family: DM Sans;
     font-size: 32px;
@@ -52,12 +52,10 @@ img {
     padding-right: 20px;
 }
 
-.book-category-list .bs-book-item:nth-child(n+2) {
-    display: none;
-}
-
 /* ul */
 .bs-book-list {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -70,6 +68,7 @@ img {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 8px;
+    height: 100%;
 }
 
 .title-book {
@@ -117,8 +116,15 @@ img {
     text-transform: uppercase;
 }
 
+/* Стилі для мобілки*/
+@media screen and (max-width: 767px) {
+    .book-category-list .bs-book-item:nth-child(n+2) {
+        display: none;
+    }
+}
+
 /* Стилі для планшетів*/
-@media (min-width: 481px) and (max-width: 767px) {
+@media screen and (min-width: 768px) {
     h1 {
         font-size: 48px;
         line-height: 52px;
@@ -131,6 +137,7 @@ img {
     h3 {
         line-height: 24px;
     }
+
     img {
         width: 218px;
         height: 316px;
@@ -140,9 +147,6 @@ img {
 
     .book-category-list {
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
         margin-left: auto;
         margin-right: auto;
         padding-left: 32px;
@@ -155,11 +159,13 @@ img {
 
     .bs-book-list {
         display: flex;
+        flex-wrap: nowrap;
         gap: 25px;
         margin-bottom: 20px;
-        width: calc(33.33% - 25px);
+        /* width: calc((100% - 25px) / 3); */
     }
     
+
     .bs-book-item {
         margin-bottom: 0px;
     }
@@ -167,59 +173,60 @@ img {
 }
 
 /* Стилі для комп'ютерів*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1440px) {
     h1 {
-            font-size: 48px;
-            line-height: 52px;
-            letter-spacing: -1.92px;
-            margin-top: 40px;
-            margin-bottom: 0px;
-            margin-left: 40px;
-        }
-    
-        h3 {
-                display: flex;
-                align-items: flex-start;
-                color: #B4AFAF;
-                font-family: DM Sans;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 24px;
-                letter-spacing: 0.42px;
-                text-transform: uppercase;
-                margin-top: 40px;
-                margin-bottom: 18px;
-            }
-    
-        img {
-            width: 180px;
-            height: 256px;
-            border-radius: 8px;
-            background: url(<path-to-image>), lightgray 50% / cover no-repeat;
-        }
-    
-        .book-category-list {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 40px;
-            padding-right: 24px;
-        }
-        .book-category-list .bs-book-item {
-            display: block;
-        }
-    
-        .bs-book-list {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 32px;
-        }
-    
-        .bs-book-item {
-            margin-bottom: 0px;
-        }
+        font-size: 48px;
+        line-height: 52px;
+        letter-spacing: -1.92px;
+        margin-top: 40px;
+        margin-bottom: 0px;
+        margin-left: 40px;
+    }
+
+    h3 {
+        display: flex;
+        align-items: flex-start;
+        color: #B4AFAF;
+        font-family: DM Sans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.42px;
+        text-transform: uppercase;
+        margin-top: 40px;
+        margin-bottom: 18px;
+    }
+
+    img {
+        width: 180px;
+        height: 256px;
+        border-radius: 8px;
+        background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    }
+
+    .book-category-list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 40px;
+        padding-right: 24px;
+    }
+
+    /* .book-category-list .bs-book-item {
+        display: block;
+    } */
+
+    .bs-book-list {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    .bs-book-item {
+        margin-bottom: 0px;
+    }
 }
