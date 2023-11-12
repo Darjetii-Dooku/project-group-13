@@ -22,7 +22,6 @@ header.dark-theme{
   height: 64px;
 }
 
-
  @media only screen and (min-width: 768px){
   .header{
   height: 72px;}
@@ -172,9 +171,6 @@ header.dark-theme{
   letter-spacing: -0.56px;
   text-transform: uppercase;
 }
-
-
-
 
 .black-icon,
 .burger-black {
