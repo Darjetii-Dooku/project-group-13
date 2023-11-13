@@ -146,7 +146,7 @@ img {
     }
 
     .book-category-list {
-        width: 100%;
+        /* width: 100%; */
         margin-left: auto;
         margin-right: auto;
         padding-left: 32px;
@@ -206,7 +206,7 @@ img {
     }
 
     .book-category-list {
-        width: 100%;
+        /* width: 100%; */
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
