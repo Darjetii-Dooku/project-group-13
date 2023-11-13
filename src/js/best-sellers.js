@@ -8,6 +8,9 @@ getTopBooks()
   
       const categoryTitle = document.createElement('h3');
       categoryTitle.textContent = `${category.list_name}`.toUpperCase();
+            
+      // add class
+      categoryTitle.className = 'bs-h3';
 
       const booksList = document.createElement('ul');
       // add class
