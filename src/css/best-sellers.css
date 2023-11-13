@@ -30,7 +30,7 @@
     margin-bottom: 18px;
 }
 
-img {
+.bs-book-image {
     width: 335px;
     height: 485px;
     border-radius: 8px;
@@ -138,7 +138,7 @@ img {
         line-height: 24px;
     }
 
-    img {
+    .bs-book-image {
         width: 218px;
         height: 316px;
         border-radius: 8px;
@@ -196,7 +196,7 @@ img {
         margin-bottom: 18px;
     }
 
-    img {
+    .bs-book-image {
         width: 180px;
         height: 256px;
         border-radius: 8px;
