@@ -31,8 +31,8 @@
 }
 
 .bs-book-image {
-    width: 180px;
-    height: 256px;
+    width: 335px;
+    height: 485px;
     border-radius: 8px;
     background: url(<path-to-image>), lightgray -4.635px -16px / 102.522% 106.839% no-repeat;
     margin-bottom: 14px;
@@ -69,7 +69,6 @@
     align-items: flex-start;
     margin-bottom: 8px;
     height: 100%;
-    max-width: 180px;
 }
 
 .title-book {
@@ -122,6 +121,9 @@
     .book-category-list .bs-book-item:nth-child(n+2) {
         display: none;
     }
+    .book-category-list{
+        align-content: center;
+    }
 }
 
 /* Styles for tablets*/
@@ -147,10 +149,10 @@
     }
 
     .book-category-list {
-        margin-left: auto;
-        margin-right: auto;
+        align-content: center;
         padding-left: 32px;
         padding-right: 32px;
+        
     }
 
     .book-category-list .bs-book-item:nth-child(n+4) {
@@ -162,11 +164,17 @@
         flex-wrap: nowrap;
         gap: 25px;
         margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
 
     .bs-book-item {
         margin-bottom: 0px;
+        max-width: 218px;
+    }
+    .bs-buttom{
+        align-self: flex-end;
     }
 
 }
@@ -271,7 +279,7 @@
             flex-direction: column;
             margin-left: auto;
             margin-right: auto;
-            padding-left: 40px;
+            padding-left: 24px;
             padding-right: 24px;
         }
         .book-category-list .bs-book-item {
