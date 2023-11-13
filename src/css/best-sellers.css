@@ -1,4 +1,4 @@
-/* Загальні стилі */
+/* General styles */
 h1 {
     font-family: DM Sans;
     font-size: 32px;
@@ -116,14 +116,14 @@ img {
     text-transform: uppercase;
 }
 
-/* Стилі для мобілки*/
+/* Styles for mobile phones*/
 @media screen and (max-width: 767px) {
     .book-category-list .bs-book-item:nth-child(n+2) {
         display: none;
     }
 }
 
-/* Стилі для планшетів*/
+/* Styles for tablets*/
 @media screen and (min-width: 768px) {
     h1 {
         font-size: 48px;
@@ -172,7 +172,7 @@ img {
 
 }
 
-/* Стилі для комп'ютерів*/
+/* Styles for computers*/
 @media screen and (min-width: 1440px) {
     h1 {
         font-size: 48px;
