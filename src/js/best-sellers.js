@@ -8,6 +8,9 @@ getTopBooks()
   
       const categoryTitle = document.createElement('h3');
       categoryTitle.textContent = `${category.list_name}`.toUpperCase();
+            
+      // add class
+      categoryTitle.className = 'bs-h3';
 
       const booksList = document.createElement('ul');
       // add class
@@ -20,7 +23,7 @@ getTopBooks()
         
       // update code with add class
         bookItem.innerHTML = `
-          <img src="${book.book_image}" alt="${book.title}"" />
+          <img class="bs-book-image" src="${book.book_image}" alt="${book.title}"" />
           <p class="title-book">${book.title}</p>
           <p class="author-book">${book.author}</p>
         `;
