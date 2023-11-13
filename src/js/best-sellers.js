@@ -1,13 +1,17 @@
-import { getTopBooks } from "./images-api"
+import { getTopBooks } from "./images-api";
+import { openModal } from "./modal-window";
 
 getTopBooks()
-.then(data => {
+  .then(data => {
     const categoryListContainer = document.querySelector('.book-category-list');
 
     data.forEach(category => {
-  
+
       const categoryTitle = document.createElement('h3');
       categoryTitle.textContent = `${category.list_name}`.toUpperCase();
+
+      // add class
+      categoryTitle.className = 'bs-h3';
 
       const booksList = document.createElement('ul');
       // add class
@@ -17,16 +21,26 @@ getTopBooks()
         const bookItem = document.createElement('li');
         // add class
         bookItem.className = 'bs-book-item';
-        
-      // update code with add class
+
+        const bookInfo = {
+          title: book.title,
+          author: book.author,
+          image: book.book_image,
+          description: book.description,
+        };
+
+        // update code with add class
         bookItem.innerHTML = `
-          <img src="${book.book_image}" alt="${book.title}"" />
+          <img src="${book.book_image}" alt="${book.title}" />
           <p class="title-book">${book.title}</p>
           <p class="author-book">${book.author}</p>
         `;
-        
         booksList.appendChild(bookItem);
+        bookItem.addEventListener('click', () => {
+          openModal(bookInfo);
+        });
       });
+
 
       categoryListContainer.appendChild(categoryTitle);
       categoryListContainer.appendChild(booksList);
@@ -35,6 +49,7 @@ getTopBooks()
       seeMoreButton.type = 'button';
       // add class
       seeMoreButton.classList.add('bs-buttom');
+
 
       // update code with add class
       // seeMoreButton.textContent = 'See More';
@@ -48,3 +63,26 @@ getTopBooks()
   })
   .catch(error => console.error('Error fetching data:', error));
 
+  //Code for scroll button
+  const myBtn = document.querySelector('.scroll-btn');
+
+  window.onscroll = function() {
+      scrollF();
+  };
+  
+  function scrollF() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          myBtn.style.display = "block";
+      } else {
+          myBtn.style.display = "none";
+      }
+  }
+  
+  myBtn.addEventListener('click', function() {
+      scrollToTop();
+  });
+  
+  function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+  }
