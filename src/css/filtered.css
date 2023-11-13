@@ -1,0 +1,232 @@
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+}
+
+
+/*_______________________MOBILE___________________*/
+
+
+
+@media screen and (max-width:768px) {
+    .conteiner {
+        max-width: 375px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        height: 100%;
+
+    }
+
+
+    .filtered-part-title {
+
+        color: #111;
+        font-family: DM Sans;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38px;
+        letter-spacing: -1.28px;
+
+    }
+
+    .filtered-title {
+        margin-top: 0;
+        margin-bottom: 40px;
+
+        color: #4F2EE8;
+        font-family: DM Sans;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 38px;
+        letter-spacing: -1.28px;
+    }
+
+    .filtered-list {
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    .filtered-picture {
+        width: 335px;
+        border-radius: 8px;
+        margin-bottom: 14px;
+        margin-top: 0;
+
+    }
+
+    .filtered-subtitle {
+        color: #111;
+
+        font-family: DM Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: -0.64px;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 4px;
+    }
+
+    .filtered-author {
+        margin-top: 0;
+        margin-bottom: 40px;
+        color: #B4AFAF;
+
+        font-family: DM Sans;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 14px;
+        /* 116.667% */
+        letter-spacing: -0.48px;
+
+    }
+
+    .filtered-list:last-child {
+        margin-bottom: 0px;
+
+
+    }
+
+    .filt-item {
+        display: none;
+    }
+
+}
+
+
+/*_______________________TABLET___________________*/
+
+
+@media screen and (min-width:768px) {
+
+    .conteiner {
+        max-width: 768px;
+
+        margin-right: 32px;
+        margin-left: 32px;
+        height: 100%;
+    }
+
+    .filtered-part-title {
+
+        color: #111;
+
+        font-family: DM Sans;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 52px;
+        letter-spacing: -1.92px;
+    }
+
+    .filtered-title {
+        margin-top: 0;
+        margin-bottom: 40px;
+
+        color: #4F2EE8;
+        font-family: DM Sans;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 52px;
+        letter-spacing: -1.92px;
+    }
+
+    .filtered-list {
+
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        gap: 40px 24px;
+        margin: 0;
+        padding: 0;
+
+    }
+
+
+    .filtered-picture {
+        width: 218px;
+        border-radius: 8px;
+        margin-bottom: 14px;
+        margin-top: 0;
+        padding: 0;
+
+    }
+
+    .fitered-subtitle {
+
+
+        color: #111;
+
+        font-family: DM Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 18px;
+        letter-spacing: -0.64px;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 4px;
+    }
+
+    .filtered-author {
+        margin-top: 0;
+        color: #B4AFAF;
+
+        font-family: DM Sans;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 14px;
+
+        letter-spacing: -0.48px;
+
+    }
+
+
+}
+
+/*_______________________DESKTOP___________________*/
+
+@media screen and (min-width:1200px) {
+    .conteiner {
+        max-width: 1060px;
+        padding: 0;
+        margin-left: 24px;
+        margin-right: 40px;
+    }
+
+    .filtered-list {
+
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        gap: 40px 24px;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .filtered-picture {
+        width: 180px;
+
+    }
+
+
+}
