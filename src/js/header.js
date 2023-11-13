@@ -2,7 +2,9 @@ const elements = {
   theme: document.querySelector('#theme-toggle'),
   body: document.querySelector('body'),
   header: document.querySelector('header'),
-  bookshelfIcon: document.getElementById('bookshelf-icon')
+  bookshelfIcon: document.getElementById('bookshelf-icon'),
+  homeButton: document.querySelector('.link-home'),
+  shoppingButton: document.querySelector('.link-shopping')
 };
 
 elements.theme.addEventListener('change', function () {
@@ -20,3 +22,14 @@ elements.theme.addEventListener('change', function () {
 });
 
 
+    elements.homeButton.addEventListener('click', function () {
+        navigateTo('index.html');
+    });
+
+    elements.shoppingButton.addEventListener('click', function () {
+        navigateTo('shopping-list.html');
+    });
+
+    function navigateTo(url) {
+        window.location.href = url;
+    }

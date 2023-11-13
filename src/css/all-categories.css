@@ -1,0 +1,78 @@
+/* відштовхнутися від хедера */
+.all-categories::-webkit-scrollbar {
+  width: 8px;
+}
+
+.all-categories::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: #e0e0e0;
+}
+
+.dark-theme .all-categories {
+  background: #202024;
+}
+
+.all-categories {
+  width: 307px;
+  height: 228px;
+  overflow-y: auto;
+  padding-right: 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.all-categories li {
+  margin-bottom: 24px;
+}
+
+@media only screen and (min-width: 767px) {
+  .all-categories {
+    margin: 0;
+    width: 309px;
+    height: 472px;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: -0.36px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .all-categories {
+    width: 328px;
+  }
+}
+
+.list-category:hover,
+.list-category:focus,
+.list-category:active {
+  text-transform: uppercase;
+  color: #4f2ee8;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+.dark-theme .list-category:hover,
+.list-category:focus,
+.list-category:active {
+  color: #EAC645;
+}
+
+.list-category {
+  color: rgba(17, 17, 17, 0.6);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  /* 112.5% */
+  letter-spacing: -0.32px;
+  height: 17px;
+  transition-duration: 0.1s;
+}
+
+.dark-theme .list-category {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+/* .all-categories ::-webkit-scrollbar {
+  width: 8px;
+} */
