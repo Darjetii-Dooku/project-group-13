@@ -2,6 +2,9 @@ import { getCategoryList } from './images-api';
 import { getCategory } from './images-api';
 const allList = document.querySelector(`.all-categories`);
 const listCategory = document.querySelector(`.book-category-list`);
+const textTitle = document.querySelector(`.Books-best-sellers-text`);
+const colorTitleText = document.querySelector(`.Books-best-sellers-text-span`);
+
 getCategoryList()
   .then(data => {
     data
@@ -26,7 +29,12 @@ function nameCategories(e) {
   if (categoriesName) {
     getCategory(categoriesName)
       .then(data => {
-        console.log(data);
+        // const titleName = data.forEach((list, i) => {
+        //   console.log(list[i]);
+        // const { list_name } = list[i];
+        // return (textTitle.innerHTML = `<h1 class="Books-best-sellers-text">${titleName.list_name[i]}</h1>`);
+        // });
+
         const listItem = data
           .map(
             ({ book_image, title, author, _id }) => `<div id="${_id}">
@@ -42,3 +50,17 @@ function nameCategories(e) {
       .catch(err => console.log(err));
   }
 }
+
+// getCategoryList()
+//   .then(data => {
+//     const titleName = data[0]
+//       .map(
+//         ({
+//           list_name,
+//         }) => `<h1>${list_name}<span class="Books-best-sellers-text-span">Books</span>
+//         </h1>`
+//       )
+//       .join(``);
+//     return (textTitle.innerHTML = titleName);
+//   })
+//   .catch(error => console.log(error));
