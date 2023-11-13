@@ -1,57 +1,60 @@
+function getImageUrl(name) {
+    return new URL(`./img/support/${name}.png`, import.meta.url).href
+}
 
 const charities = [
     {
       title: 'Save the Children',
       url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-      img: './img/support/save-children@2x.png', 
+      img: getImageUrl('save-children@2x'), 
       width: '131px',
     },
     {
       title: 'Project HOPE',
       url: 'https://www.projecthope.org/country/ukraine/',
-      img: './img/support/hope@2x.png',
+      img: getImageUrl('hope@2x'),
       width: '62px',
     },
     {
         title: 'International Medical Corps',
         url: 'https://internationalmedicalcorps.org/country/ukraine/',
-        img: './img/support/international@2x.png',
+        img: getImageUrl('international@2x'),
         width: '101px',
       },
       {
         title: 'RAZOM',
         url: 'https://www.razomforukraine.org/',
-        img: './img/support/razom@2x.png',
+        img: getImageUrl('razom@2x'),
         width: '82px',
       },
       {
         title: 'Action against hunger',
         url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-        img: './img/support/action@2x.png',
+        img:   getImageUrl('action@2x'),
         width: '55px',
       },
       {
         title: 'Serhiy Prytula Charity Foundation',
         url: 'https://prytulafoundation.org/en',
-        img: './img/support/prytula@2x.png',
+        img: getImageUrl('prytula@2x'),
         width: '115px',
       },
       {
         title: 'Medicins Sans Frontieres',
         url: 'https://www.msf.org/ukraine',
-        img: './img/support/medecins@2x.png',
+        img: getImageUrl('medecins@2x'),
         width: '102px',
       },
       {
         title: 'World vision',
         url: 'https://www.wvi.org/emergencies/ukraine',
-        img: './img/support/world-vision@2x.png',
+        img: getImageUrl('world-vision@2x'),
         width: '81px',
       },
     {
         title: 'UNITED24',
         url: 'https://u24.gov.ua/uk',
-        img: './img/support/united24@2x.png',
+        img: getImageUrl('united24@2x'),
         width: '109px',
       },
 
