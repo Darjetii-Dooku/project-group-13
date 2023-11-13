@@ -211,20 +211,21 @@
         margin-right: auto;
         padding-left: 40px;
         padding-right: 24px;
-        /* width: calc((100% - 24px) / 5); */
     }
 
-    /* .book-category-list .bs-book-item {
-        display: block;
-    } */
+/* .book-category-list .bs-book-item:nth-child(n+6) {
+    display: none;
+} */
 
     .bs-book-list {
         display: flex;
+        flex-wrap: wrap;
         gap: 24px;
         margin-bottom: 32px;
     }
 
     .bs-book-item {
         margin-bottom: 0px;
+        /* width: calc((100% - 24px) / 5); */
     }
 }
