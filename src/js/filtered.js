@@ -21,8 +21,8 @@ getBooksById()
       // update code with add class
         bookItem.innerHTML = `
           <img src="${book.book_image}" alt="${book.title}" />
-          <p class="filtered-subtitle">${book.title}</p>
-          <p class="filtered-author">${book.author}</p>
+          <p class="filt-title">${book.title}</p>
+          <p class="filt-author">${book.author}</p>
         `;
         
         booksList.appendChild(bookItem);
