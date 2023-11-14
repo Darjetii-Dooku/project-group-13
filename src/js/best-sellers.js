@@ -27,6 +27,8 @@ getTopBooks()
           author: book.author,
           image: book.book_image,
           description: book.description,
+
+
         };
 
         // update code with add class
