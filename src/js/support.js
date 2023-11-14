@@ -1,5 +1,5 @@
 function getImageUrl(name) {
-    return new URL(`./img/support/${name}.png`, import.meta.url).href
+    return new URL(`../img/support/${name}.png`, import.meta.url).href
 }
 
 const charities = [
