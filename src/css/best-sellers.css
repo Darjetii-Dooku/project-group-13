@@ -31,8 +31,8 @@
 }
 
 .bs-book-image {
-    width: 335px;
-    height: 485px;
+    max-width: 335px;
+    max-height: 485px;
     border-radius: 8px;
     background: url(<path-to-image>), lightgray -4.635px -16px / 102.522% 106.839% no-repeat;
     margin-bottom: 14px;
@@ -61,6 +61,14 @@
     margin: 0;
     justify-content: space-between;
 }
+.bs-book-list-fil {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+}
 
 /* li */
 .bs-book-item {
@@ -69,6 +77,15 @@
     align-items: flex-start;
     margin-bottom: 8px;
     height: 100%;
+    width: 335px;
+}
+.bs-book-item-fil {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    height: 100%;
+    width: 335px;
 }
 
 .title-book {
@@ -121,10 +138,22 @@
     .book-category-list .bs-book-item:nth-child(n+2) {
         display: none;
     }
+    .book-category-list{
+        align-content: center;
+        
+    }
+    .bs-book-list{
+        display: flex;
+        flex-direction: column;
+    }
+    .bs-book-list-fil{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Styles for tablets*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1157px){
     .Books-best-sellers-text {
         font-size: 48px;
         line-height: 52px;
@@ -146,10 +175,9 @@
     }
 
     .book-category-list {
-        margin-left: auto;
-        margin-right: auto;
         padding-left: 32px;
         padding-right: 32px;
+        
     }
 
     .book-category-list .bs-book-item:nth-child(n+4) {
@@ -161,18 +189,37 @@
         flex-wrap: nowrap;
         gap: 25px;
         margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bs-book-list-fil {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
 
     .bs-book-item {
         margin-bottom: 0px;
+        max-width: 218px;
+        align-content: flex-end;
+    }
+    .bs-book-item-fil {
+        margin-bottom: 0px;
+        max-width: 218px;
+    }
+    .bs-buttom{
+        align-self: flex-end;
     }
 
 }
 
 
 /* Styles for computers*/
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1158px) {
     .Books-best-sellers-text {
         font-size: 48px;
         line-height: 52px;
@@ -224,16 +271,26 @@
         gap: 24px;
         margin-bottom: 32px;
     }
+    .bs-book-list-fil {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
 
     .bs-book-item {
         margin-bottom: 0px;
-        /* width: calc((100% - 24px) / 5); */
+        max-width: 180px;
+    }
+    .bs-book-item-fil {
+        margin-bottom: 0px;
+        max-width: 180px;
     }
 }
 
 /* Desktop styles*/
 @media screen and (min-width: 768px) {
-    h1 {
+    .Books-best-sellers-text {
             font-size: 48px;
             line-height: 52px;
             letter-spacing: -1.92px;
@@ -242,7 +299,7 @@
             margin-left: 40px;
         }
     
-        h3 {
+        .bs-h3 {
                 display: flex;
                 align-items: flex-start;
                 color: #B4AFAF;
@@ -257,7 +314,7 @@
                 margin-bottom: 18px;
             }
     
-        img {
+        .bs-book-image {
             width: 180px;
             height: 256px;
             border-radius: 8px;
@@ -266,14 +323,17 @@
     
         .book-category-list {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             flex-direction: column;
             margin-left: auto;
             margin-right: auto;
-            padding-left: 40px;
+            padding-left: 24px;
             padding-right: 24px;
         }
         .book-category-list .bs-book-item {
+            display: block;
+        }
+        .book-category-list .bs-book-item-fil {
             display: block;
         }
     
@@ -282,8 +342,16 @@
             gap: 24px;
             margin-bottom: 32px;
         }
+        .bs-book-list-fil {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
     
         .bs-book-item {
+            margin-bottom: 0px;
+        }
+        .bs-book-item-fil {
             margin-bottom: 0px;
         }
 }
