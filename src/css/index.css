@@ -22,8 +22,34 @@
   line-height: 24px;
   font-weight: 400;
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+  --bg-white: #F6F6F6;
+    /*Color for white bsckground*/
+    --bg-black: #202024;
+    /*Color for dark background*/
+    --bg-header-dark: #111;
+    /*Color for dark theme geader*/
+    --main-hover-color: #4F2EE8;
+    /*Color for hover, sections All categoreis, Best sellers*/
+    --main-text-color: rgba(17, 17, 17, 0.60);
+    /*Color of text, white theme*/
+    --main-text-color-dark: rgba(255, 255, 255, 0.60);
+    /*Color of text, dark theme*/
+    --title-text-dark-theme: #FFF;
+    /*Color of title, dsrk theme*/
+    --title-text-white-theme: #111;
+    /*Color of title, white theme*/
+    --hover-all-categories: #EAC645;
+    /*Color for hover of section All categoies*/
+    --title-color: #B4AFAF;
+    /*Color for title*/
+    --book-image: lightgray;
+    /*Color of book image*/
+    --all-categories-bg: #e0e0e0;
+    /*Colo for All categories ackground*/
+    --list-kategory: rgba(17, 17, 17, 0.6);
+    /*Color for All categories list*/
+    --list-category-dark: rgba(255, 255, 255, 0.60);
+    /*Color for All category list, dark theme*/
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

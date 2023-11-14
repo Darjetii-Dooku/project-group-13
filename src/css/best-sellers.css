@@ -12,17 +12,17 @@
 }
 
 .dark-theme .Books-best-sellers-text {
-    color: #FFF;
+    color: var(--title-text-dark-theme);
 }
 
 .Books-best-sellers-text-span {
-    color: #4F2EE8;
+    color:var(--main-hover-color);
 }
 
 .bs-h3 {
     display: flex;
     align-items: flex-start;
-    color: #B4AFAF;
+    color:var(--title-color);
     font-family: DM Sans;
     font-size: 14px;
     font-style: normal;
@@ -38,7 +38,7 @@
     width: 335px;
     height: 485px;
     border-radius: 8px;
-    background: url(<path-to-image>), lightgray -4.635px -16px / 102.522% 106.839% no-repeat;
+    background: url(<path-to-image>), var(--book-image) -4.635px -16px / 102.522% 106.839% no-repeat;
     margin-bottom: 14px;
     position: relative;
     max-width: 100%;
@@ -76,7 +76,7 @@
 }
 
 .title-book {
-    color: #111;
+    color: var(--bg-header-dark);
     font-family: DM Sans;
     font-size: 16px;
     font-style: normal;
@@ -89,7 +89,7 @@
 }
 
 .author-book {
-    color: #B4AFAF;
+    color:var(--title-color);
     font-family: DM Sans;
     font-size: 12px;
     font-style: italic;
@@ -106,11 +106,11 @@
     padding: 14px 28px;
     align-self: flex-end;
     border-radius: 40px;
-    border: 2px solid #4F2EE8;
+    border: 2px solid var(-main-hover-color);
 }
 
 .bs-buttom-name {
-    color: #111;
+    color: var(--bg-header-dark);
     font-family: DM Sans;
     font-size: 14px;
     font-style: normal;
@@ -146,7 +146,7 @@
         width: 218px;
         height: 316px;
         border-radius: 8px;
-        background: url(<path-to-image>), lightgray 1.199px -15.113px / 101.376% 105.645% no-repeat;
+        background: url(<path-to-image>),var(--book-image) 1.199px -15.113px / 101.376% 105.645% no-repeat;
     }
 
     .book-category-list {
@@ -188,7 +188,7 @@
     .bs-h3 {
         display: flex;
         align-items: flex-start;
-        color: #B4AFAF;
+        color: var(--title-color);
         font-family: DM Sans;
         font-size: 14px;
         font-style: normal;
@@ -204,7 +204,7 @@
         width: 180px;
         height: 256px;
         border-radius: 8px;
-        background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+        background: url(<path-to-image>), var(--book-image) 50% / cover no-repeat;
     }
 
     .book-category-list {
@@ -248,7 +248,7 @@
     h3 {
         display: flex;
         align-items: flex-start;
-        color: #B4AFAF;
+        color: var(--title-color);
         font-family: DM Sans;
         font-size: 14px;
         font-style: normal;
@@ -264,7 +264,7 @@
         width: 180px;
         height: 256px;
         border-radius: 8px;
-        background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+        background: url(<path-to-image>), var(--book-image) 50% / cover no-repeat;
     }
 
     .book-category-list {
@@ -307,7 +307,7 @@ html {
     width: 49px;
     height: 49px;
     border-radius: 50%;
-    background: #4F2EE8;
+    background: var(--main-hover-color);
     border: none;
     overflow: hidden;
 }
@@ -323,6 +323,6 @@ html {
 }
 
 #scroll-btn:hover {
-    box-shadow: 0 0 20px rgb(79, 46, 232);
+    box-shadow: 0 0 20px var(--main-hover-color);
 }
 

@@ -5,11 +5,11 @@
 
 .all-categories::-webkit-scrollbar-thumb {
   border-radius: 12px;
-  background: #e0e0e0;
+  background:var(--all-categories-bg);
 }
 
 .dark-theme .all-categories {
-  background: #202024;
+  background: var(--bg-black);
 }
 
 .all-categories {
@@ -47,7 +47,7 @@
 .list-category:focus,
 .list-category:active {
   text-transform: uppercase;
-  color: #4f2ee8;
+  color: var(--main-hover-color);
   box-sizing: border-box;
   font-weight: 700;
 }
@@ -55,11 +55,11 @@
 .dark-theme .list-category:hover,
 .list-category:focus,
 .list-category:active {
-  color: #EAC645;
+  color: var(--hover-all-categories);
 }
 
 .list-category {
-  color: rgba(17, 17, 17, 0.6);
+  color:var(--list-kategory);
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
@@ -70,7 +70,7 @@
 }
 
 .dark-theme .list-category {
-  color: rgba(255, 255, 255, 0.60);
+  color: var(--list-category-dark);
 }
 
 /* .all-categories ::-webkit-scrollbar {
