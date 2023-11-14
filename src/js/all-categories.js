@@ -4,11 +4,8 @@ import { getTopBooks } from './images-api';
 const allList = document.querySelector(`.all-categories`);
 const listCategory = document.querySelector(`.book-category-list`);
 const textTitle = document.querySelector(`.Books-best-sellers-text`);
-const textSpanTitleEnd = document.querySelector(
-  `.Books-best-sellers-text-span`
-);
-
-function allCategoriesList() {}
+const activeCategory = document.querySelector(`.active-all-categories`);
+activeCategory.classList.remove('inactive-all-categories');
 
 getCategoryList()
   .then(data => {
@@ -19,7 +16,7 @@ getCategoryList()
 
         return allList.insertAdjacentHTML(
           `beforeend`,
-          `<li ><a class="list-category" href="">${list_name}</a></li>`
+          `<li><a class="list-category"href="">${list_name}</a></li>`
         );
       })
       .join(``);
@@ -33,8 +30,10 @@ function nameCategories(e) {
   console.log(e.target.textContent);
   const categoriesName = e.target.textContent;
   if (categoriesName === `All categories`) {
+    activeCategory.classList.remove('inactive-all-categories');
+    activeCategory.classList.add('active-all-categories');
     textTitle.innerHTML = `Best Sellers`;
-    const textSpan = `Books`;
+    const textSpan = ` Books`;
     let span = document.createElement('span');
     span.classList.add(`Books-best-sellers-text-span`);
     span.textContent = textSpan;
@@ -91,6 +90,8 @@ function nameCategories(e) {
       })
       .catch(error => console.error('Error fetching data:', error));
   } else {
+    activeCategory.classList.remove('active-all-categories');
+    activeCategory.classList.add('inactive-all-categories');
     const nameTitle = categoriesName.split(` `);
     const changeNameTitle = nameTitle.slice(0, -1);
 
@@ -99,7 +100,7 @@ function nameCategories(e) {
     textTitle.innerHTML = changeNameTitle.join(` `);
     let span = document.createElement('span');
     span.classList.add(`Books-best-sellers-text-span`);
-    span.textContent = spanName;
+    span.textContent = ` ${spanName}`;
     textTitle.appendChild(span);
   }
 
