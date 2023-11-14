@@ -1,7 +1,15 @@
 import { getCategoryList } from './images-api';
 import { getCategory } from './images-api';
+import { getTopBooks } from './images-api';
 const allList = document.querySelector(`.all-categories`);
 const listCategory = document.querySelector(`.book-category-list`);
+const textTitle = document.querySelector(`.Books-best-sellers-text`);
+const textSpanTitleEnd = document.querySelector(
+  `.Books-best-sellers-text-span`
+);
+
+function allCategoriesList() {}
+
 getCategoryList()
   .then(data => {
     data
@@ -22,18 +30,94 @@ allList.addEventListener(`click`, nameCategories);
 
 function nameCategories(e) {
   e.preventDefault();
+  console.log(e.target.textContent);
   const categoriesName = e.target.textContent;
+  if (categoriesName === `All categories`) {
+    textTitle.innerHTML = `Best Sellers`;
+    const textSpan = `Books`;
+    let span = document.createElement('span');
+    span.classList.add(`Books-best-sellers-text-span`);
+    span.textContent = textSpan;
+    textTitle.appendChild(span);
+    getTopBooks()
+      .then(data => {
+        const categoryListContainer = document.querySelector(
+          '.book-category-list'
+        );
+
+        data.forEach(category => {
+          const categoryTitle = document.createElement('h3');
+          categoryTitle.textContent = `${category.list_name}`.toUpperCase();
+
+          // add class
+          categoryTitle.className = 'bs-h3';
+
+          const booksList = document.createElement('ul');
+          // add class
+          booksList.className = 'bs-book-list';
+
+          category.books.forEach(book => {
+            const bookItem = document.createElement('li');
+            // add class
+            bookItem.className = 'bs-book-item';
+
+            // update code with add class
+            bookItem.innerHTML = `
+          <img class="bs-book-image" src="${book.book_image}" alt="${book.title}"" />
+          <p class="title-book">${book.title}</p>
+          <p class="author-book">${book.author}</p>
+        `;
+
+            booksList.appendChild(bookItem);
+          });
+
+          categoryListContainer.appendChild(categoryTitle);
+          categoryListContainer.appendChild(booksList);
+
+          const seeMoreButton = document.createElement('button');
+          seeMoreButton.type = 'button';
+          // add class
+          seeMoreButton.classList.add('bs-buttom');
+
+          // update code with add class
+          // seeMoreButton.textContent = 'See More';
+          const seeMoreText = document.createElement('span');
+          seeMoreText.textContent = 'See More';
+          seeMoreText.classList.add('bs-buttom-name');
+          seeMoreButton.appendChild(seeMoreText);
+
+          categoryListContainer.appendChild(seeMoreButton);
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  } else {
+    const nameTitle = categoriesName.split(` `);
+    const changeNameTitle = nameTitle.slice(0, -1);
+
+    const spanName = categoriesName.split(' ').pop();
+
+    textTitle.innerHTML = changeNameTitle.join(` `);
+    let span = document.createElement('span');
+    span.classList.add(`Books-best-sellers-text-span`);
+    span.textContent = spanName;
+    textTitle.appendChild(span);
+  }
+
   if (categoriesName) {
     getCategory(categoriesName)
       .then(data => {
-        console.log(data);
         const listItem = data
           .map(
-            ({ book_image, title, author, _id }) => `<div id="${_id}">
-          <img src="${book_image}" alt="${title}" width="180px" height="256px" />
-          <p>${title}</p>
-          <p>${author}</p>
-        </div>`
+            ({
+              book_image,
+              title,
+              author,
+              _id,
+            }) => `<li id="${_id}" class="bs-book-item">
+      <img class="bs-book-image" src="${book_image}" alt="${title}" />
+      <p class="title-book">${title}</p>
+      <p class="author-book">${author}</p>
+    </li>`
           )
           .join(``);
 
