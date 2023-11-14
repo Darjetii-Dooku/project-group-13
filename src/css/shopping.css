@@ -119,6 +119,27 @@
 .shopping-list-svg {
   fill: #fff;
 }
+
+.amazon-pic {
+  width: 32px;
+  height: 11px;
+  margin-left: 8px;
+}
+
+.kindle-pic {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+.amazon-kindle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+}
 @media screen and (min-width: 375px) {
   .shopping-list-empty {
     max-width: 375px;
@@ -173,6 +194,23 @@
     margin-left: 32px;
     margin-right: 32px;
   }
+
+  .amazon-kindle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+  }
+  .amazon-pic {
+    width: 48px;
+    height: 15px;
+  }
+  .kindle-pic {
+    width: 28px;
+    height: 27px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -214,5 +252,21 @@
     position: absolute;
     left: 24px;
     top: 24px;
+  }
+  .amazon-kindle {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+  }
+  .amazon-pic {
+    width: 48px;
+    height: 15px;
+  }
+  .kindle-pic {
+    width: 28px;
+    height: 27px;
   }
 }
