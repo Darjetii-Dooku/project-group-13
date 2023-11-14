@@ -290,7 +290,7 @@
 
 /* Desktop styles*/
 @media screen and (min-width: 768px) {
-    h1 {
+    .Books-best-sellers-text {
             font-size: 48px;
             line-height: 52px;
             letter-spacing: -1.92px;
@@ -299,7 +299,7 @@
             margin-left: 40px;
         }
     
-        h3 {
+        .bs-h3 {
                 display: flex;
                 align-items: flex-start;
                 color: #B4AFAF;
@@ -314,7 +314,7 @@
                 margin-bottom: 18px;
             }
     
-        img {
+        .bs-book-image {
             width: 180px;
             height: 256px;
             border-radius: 8px;
