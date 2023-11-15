@@ -9,7 +9,7 @@
     
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
     #charity-section {
         width: 356px;
 
@@ -24,7 +24,7 @@
     padding: 24px 87px 42px 40px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
     .support-section {
         padding: 24px 108px 42px 40px;;
     } 
@@ -135,7 +135,7 @@
         margin: 0 149px 24px 148px ;
     }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
     .support-button {
 margin: 0 159px 24px 150px;
     }
@@ -175,7 +175,7 @@ margin: 0 159px 24px 150px;
         
     }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
     .wrapper-cont {
         max-width: 356px;
         flex-direction: column; 
