@@ -1,0 +1,222 @@
+body,
+html {
+    scroll-behavior: smooth;
+}
+
+/* #scroll-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    display: none;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background: #4F2EE8;
+    border: none;
+    overflow: hidden;
+} */
+
+/* .scroll-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+} */
+
+/* #scroll-btn:hover .scroll-icon {
+    transform: translateY(-10px) scale(1.2);
+}
+
+#scroll-btn:hover {
+    box-shadow: 0 0 20px rgb(79, 46, 232);
+} */
+
+
+.close {
+    /* width: 24px;
+    height: 24px; */
+    flex-shrink: 0;
+    color: #111;
+    float: right;
+    margin-top: 12px;
+    margin-right: 12px;
+
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* стилі для телефону */
+.modal {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%) scale(1);
+    width: 335px;
+    min-height: 762px;
+    border-radius: 18px;
+    background: #FFF;
+    overflow: auto;
+    border: 2px solid #111;
+    display: none;
+
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 40px 24px;
+
+}
+
+.modal-image {
+    width: 287px;
+    height: 408px;
+    border-radius: 8px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+
+
+}
+
+.modal-title {
+    color: #111;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.13;
+    letter-spacing: -0.64px;
+    margin-bottom: 4px;
+
+}
+
+.modal-author {
+    width: 287px;
+    flex-shrink: 0;
+    color: #B4AFAF;
+    font-family: DM Sans;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: -0.48px;
+    margin-bottom: 18px;
+}
+
+.modal-description {
+    width: 287px;
+    height: 70px;
+    flex-shrink: 0;
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
+}
+
+.modal-button {
+    border-radius: 40px;
+    border: 2px solid #4F2EE8;
+    margin: 0 62px;
+    display: inline-flex;
+    padding: 14px 23px;
+    align-items: flex-start;
+    gap: 10px;
+    color: #111;
+    font-family: DM Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.29;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+}
+
+
+/* стилі для планшету */
+
+@media screen and (min-width: 768px) {
+    .modal {
+        width: 579px;
+        min-height: 465px;
+        top: 20%;
+    }
+
+    .modal-content {
+        padding: 40px 40px 40px 40px;
+        display: flex;
+    }
+
+    .text-content-modal {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 24px;
+    }
+
+    .modal-image {
+        width: 192px;
+        height: 281px;
+    }
+
+    .modal-title {
+        color: #111;
+        font-family: DM Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.13;
+        letter-spacing: -0.64px;
+        margin-bottom: 4px;
+
+    }
+
+    .modal-author {
+        width: 287px;
+        flex-shrink: 0;
+        color: #B4AFAF;
+        font-family: DM Sans;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 1.16;
+        letter-spacing: -0.48px;
+        margin-bottom: 18px;
+    }
+
+    .modal-description {
+        width: 287px;
+        height: 70px;
+        flex-shrink: 0;
+        color: #111;
+        font-family: DM Sans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.29;
+        letter-spacing: -0.56px;
+    }
+
+    .modal-button {
+        padding: 20px 148px;
+        margin: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        line-height: 1.3;
+        letter-spacing: -0.18px;
+    }
+}
+
+/* стилі для ПК */
+
+@media screen and (min-width:
