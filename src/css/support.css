@@ -151,7 +151,7 @@ margin: 0 159px 24px 150px;
     }
 } 
 
-.arrow-icon {
+.support-icon {
     width: 22px;
     height: 22px;
     display: inline-block; 
@@ -160,3 +160,11 @@ margin: 0 159px 24px 150px;
 .arrow-rotate {
     transform: rotate(180deg);
 }
+
+
+/*container 
+
+.support-cat-container {
+    display: flex;
+    flex-direction: column;
+} */
