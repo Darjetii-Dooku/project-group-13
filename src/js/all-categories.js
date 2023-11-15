@@ -42,7 +42,6 @@ function nameCategories(e) {
     textTitle.appendChild(span);
     getTopBooks()
       .then(data => {
-        console.log(data);
         const categoryListContainer = document.querySelector(
           '.book-category-list'
         );
@@ -130,3 +129,7 @@ function nameCategories(e) {
       .catch(err => console.log(err));
   }
 }
+
+getTopBooks().then(data => {
+  console.log(data);
+});
