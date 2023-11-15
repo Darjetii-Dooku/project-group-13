@@ -26,48 +26,60 @@ function renderCategoryBooks(categoryName) {
 
 document.addEventListener('DOMContentLoaded', () => {
   getTopBooks()
-    .then(data => {
-      const categoryListContainer = document.querySelector('.book-category-list');
+  .then(data => {
+    const categoryListContainer = document.querySelector('.book-category-list');
 
-      data.forEach(category => {
-        const categoryTitle = document.createElement('h3');
-        categoryTitle.textContent = `${category.list_name}`.toUpperCase();
-        categoryTitle.className = 'bs-h3';
+    data.forEach(category => {
+      const categoryItem = document.createElement('li');
+      categoryItem.className = 'bs-category-item';
 
-        const booksList = document.createElement('ul');
-        booksList.className = 'bs-book-list';
+      const categoryTitle = document.createElement('h3');
+      categoryTitle.textContent = `${category.list_name}`.toUpperCase();
+      categoryTitle.className = 'bs-h3';
 
-        category.books.forEach(book => {
-          const bookItem = document.createElement('li');
-          bookItem.className = 'bs-book-item';
-          bookItem.innerHTML = `
-            <img class="bs-book-image" src="${book.book_image}" alt="${book.title}" />
-            <p class="title-book">${book.title}</p>
-            <p class="author-book">${book.author}</p>
-          `;
-          booksList.appendChild(bookItem);
-        });
+      const booksList = document.createElement('ul');
+      booksList.className = 'bs-book-list';
 
-        categoryListContainer.appendChild(categoryTitle);
-        categoryListContainer.appendChild(booksList);
-
-        const seeMoreButton = document.createElement('button');
-        seeMoreButton.type = 'button';
-        seeMoreButton.classList.add('bs-buttom');
-        const seeMoreText = document.createElement('span');
-        seeMoreText.textContent = 'See More';
-        seeMoreText.classList.add('bs-buttom-name');
-        seeMoreButton.appendChild(seeMoreText);
-
-        categoryListContainer.appendChild(seeMoreButton);
-
-        seeMoreButton.addEventListener('click', function () {
-          renderCategoryBooks(category.list_name);
-          bsH1.textContent = category.list_name;
-        });
+      category.books.forEach(book => {
+        const bookItem = document.createElement('li');
+        bookItem.className = 'bs-book-item';
+        bookItem.innerHTML = `
+          <img class="bs-book-image" src="${book.book_image}" alt="${book.title}" />
+          <p class="title-book">${book.title}</p>
+          <p class="author-book">${book.author}</p>
+        `;
+        booksList.appendChild(bookItem);
       });
-    })
-    .catch(error => console.error('Error fetching data:', error));
+
+      const seeMoreButton = document.createElement('li');
+      seeMoreButton.className = 'bs-category-item';
+      const buttonContainer = document.createElement('div');
+      buttonContainer.className = 'bs-button-container';
+      const seeMoreButtonElement = document.createElement('button');
+      seeMoreButtonElement.type = 'button';
+      seeMoreButtonElement.classList.add('bs-buttom');
+      const seeMoreText = document.createElement('span');
+      seeMoreText.textContent = 'See More';
+      seeMoreText.classList.add('bs-buttom-name');
+      seeMoreButtonElement.appendChild(seeMoreText);
+      buttonContainer.appendChild(seeMoreButtonElement);
+      seeMoreButton.appendChild(buttonContainer);
+
+      categoryItem.appendChild(categoryTitle);
+      categoryItem.appendChild(booksList);
+      categoryItem.appendChild(seeMoreButton);
+
+      categoryListContainer.appendChild(categoryItem);
+
+      seeMoreButtonElement.addEventListener('click', function () {
+        renderCategoryBooks(category.list_name);
+        bsH1.textContent = category.list_name;
+      });
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+
 
   myBtn.addEventListener('click', function () {
     scrollToTop();
