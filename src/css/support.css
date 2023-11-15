@@ -7,7 +7,6 @@
     box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
     margin: 40px 32px 98px 32px;
     
-    
 }
 
 
@@ -138,7 +137,6 @@
     margin: 0 151px 20px 152px;
     padding: 0;
     border: none;
-    position: absolute;
     cursor: pointer;
     padding: 8px 8px;
 }

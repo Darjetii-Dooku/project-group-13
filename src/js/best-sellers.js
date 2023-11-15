@@ -1,79 +1,92 @@
-import { getTopBooks } from "./images-api"
+import { getTopBooks, getCategory } from "./images-api";
 
-getTopBooks()
-.then(data => {
-    const categoryListContainer = document.querySelector('.book-category-list');
+const listCategory = document.querySelector('.book-category-list');
+const bsH1 = document.querySelector('.Books-best-sellers-text');
 
-    data.forEach(category => {
-  
-      const categoryTitle = document.createElement('h3');
-      categoryTitle.textContent = `${category.list_name}`.toUpperCase();
-            
-      // add class
-      categoryTitle.className = 'bs-h3';
+const myBtn = document.querySelector('.scroll-btn');
 
-      const booksList = document.createElement('ul');
-      // add class
-      booksList.className = 'bs-book-list';
+function renderCategoryBooks(categoryName) {
+  getCategory(categoryName)
+    .then(data => {
+      console.log(data);
+      const listItem = data
+        .map(({ book_image, title, author, _id }) => `
+          <li class="bs-book-item-fil">
+            <img src="${book_image}" alt="${title}" class="bs-book-image" />
+            <p class="title-book">${title}</p>
+            <p class="author-book">${author}</p>
+          </li>`)
+        .join('');
 
-      category.books.forEach(book => {
-        const bookItem = document.createElement('li');
-        // add class
-        bookItem.className = 'bs-book-item';
-        
-      // update code with add class
-        bookItem.innerHTML = `
-          <img class="bs-book-image" src="${book.book_image}" alt="${book.title}"" />
-          <p class="title-book">${book.title}</p>
-          <p class="author-book">${book.author}</p>
-        `;
-        
-        booksList.appendChild(bookItem);
+      listCategory.innerHTML = `<ul class="bs-book-list-fil">${listItem}</ul>`;
+    })
+    .catch(error => console.error('Error fetching data:', error));
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  getTopBooks()
+    .then(data => {
+      const categoryListContainer = document.querySelector('.book-category-list');
+
+      data.forEach(category => {
+        const categoryTitle = document.createElement('h3');
+        categoryTitle.textContent = `${category.list_name}`.toUpperCase();
+        categoryTitle.className = 'bs-h3';
+
+        const booksList = document.createElement('ul');
+        booksList.className = 'bs-book-list';
+
+        category.books.forEach(book => {
+          const bookItem = document.createElement('li');
+          bookItem.className = 'bs-book-item';
+          bookItem.innerHTML = `
+            <img class="bs-book-image" src="${book.book_image}" alt="${book.title}" />
+            <p class="title-book">${book.title}</p>
+            <p class="author-book">${book.author}</p>
+          `;
+          booksList.appendChild(bookItem);
+        });
+
+        categoryListContainer.appendChild(categoryTitle);
+        categoryListContainer.appendChild(booksList);
+
+        const seeMoreButton = document.createElement('button');
+        seeMoreButton.type = 'button';
+        seeMoreButton.classList.add('bs-buttom');
+        const seeMoreText = document.createElement('span');
+        seeMoreText.textContent = 'See More';
+        seeMoreText.classList.add('bs-buttom-name');
+        seeMoreButton.appendChild(seeMoreText);
+
+        categoryListContainer.appendChild(seeMoreButton);
+
+        seeMoreButton.addEventListener('click', function () {
+          renderCategoryBooks(category.list_name);
+          bsH1.textContent = category.list_name;
+        });
       });
+    })
+    .catch(error => console.error('Error fetching data:', error));
 
-      categoryListContainer.appendChild(categoryTitle);
-      categoryListContainer.appendChild(booksList);
-
-      const seeMoreButton = document.createElement('button');
-      seeMoreButton.type = 'button';
-      // add class
-      seeMoreButton.classList.add('bs-buttom');
-
-      // update code with add class
-      // seeMoreButton.textContent = 'See More';
-      const seeMoreText = document.createElement('span');
-      seeMoreText.textContent = 'See More';
-      seeMoreText.classList.add('bs-buttom-name');
-      seeMoreButton.appendChild(seeMoreText);
-
-      categoryListContainer.appendChild(seeMoreButton);
-    });
-  })
-  .catch(error => console.error('Error fetching data:', error));
-
-  //Code for scroll button
-  const myBtn = document.querySelector('.scroll-btn');
-
-  window.onscroll = function() {
-      scrollF();
-  };
-  
-  function scrollF() {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-          myBtn.style.display = "block";
-      } else {
-          myBtn.style.display = "none";
-      }
-  }
-  
-  myBtn.addEventListener('click', function() {
-      scrollToTop();
+  myBtn.addEventListener('click', function () {
+    scrollToTop();
   });
-  
-  function scrollToTop() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
+});
+
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+window.onscroll = function () {
+  scrollF();
+};
+
+function scrollF() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    myBtn.style.display = "block";
+  } else {
+    myBtn.style.display = "none";
   }
-  
-
-
+}
