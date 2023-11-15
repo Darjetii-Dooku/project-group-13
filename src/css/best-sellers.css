@@ -93,7 +93,12 @@
 }
 
 .title-book {
+  width: 335px;
+  display: inline-block;
+  overflow: hidden;
   color: #111;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-family: DM Sans;
   font-size: 16px;
   font-style: normal;
@@ -103,11 +108,15 @@
   text-transform: uppercase;
   margin-top: 0px;
   margin-bottom: 4px;
-  text-overflow: ellipsis;
 }
 
 .author-book {
-  color: #b4afaf;
+  width: 335px;
+  display: inline-block;
+  overflow: hidden;
+  color: #B4AFAF;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-family: DM Sans;
   font-size: 12px;
   font-style: italic;
@@ -116,7 +125,6 @@
   letter-spacing: -0.48px;
   margin-top: 0px;
   margin-bottom: 0px;
-  text-overflow: ellipsis;
 }
 
 .bs-buttom {
@@ -195,14 +203,17 @@
 }
 
 .book-category-list {
+  display: flex;
+  flex-wrap: nowrap;
+  /* overflow: hidden; */
   padding-left: 32px;
   padding-right: 32px;
-  max-width: 768px;
+  max-width: 1439px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.book-category-list .bs-book-item:nth-child(n+4) {
+.bs-book-list .bs-book-item:nth-child(n+4) {
   display: none;
 }
 
@@ -225,6 +236,14 @@
   align-content: flex-end;
 }
 
+.title-book {
+  width: 218px;
+}
+
+.author-book {
+  width: 218px;
+}
+
 .bs-book-item-fil {
   margin-bottom: 0px;
   max-width: 218px;
@@ -235,7 +254,7 @@
 }
 }
 
-/* Styles for computers*/
+/* Styles for desctop*/
 @media screen and (min-width: 1440px) {
   .Books-best-sellers-text {
     font-size: 48px;
@@ -262,6 +281,7 @@
   }
 
   .bs-book-image {
+    width: auto;
     min-width: 180px;
     height: 256px;
     border-radius: 8px;
@@ -279,13 +299,14 @@
     max-width: 1440px;
   }
   
-  /* .book-category-list .bs-book-item {
-    display: block;
-  } */
+.bs-book-list .bs-book-item {
+  display: block !important;
+}
 
   .bs-book-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
     gap: 24px;
     margin-bottom: 32px;
   }
@@ -295,13 +316,22 @@
     max-width: 180px;
   }
 
-  .book-category-list .bs-book-item-fil {
+  .title-book {
+    width: 180px;
+  }
+
+  .author-book {
+    width: 180px;
+  }
+
+  .bs-book-list-fil .bs-book-item-fil {
     display: block;
   }
 
   .bs-book-list-fil {
     display: flex;
-    gap: 24px;
+    row-gap: 40px;
+    column-gap: 24px;
     margin-bottom: 32px;
   }
         
