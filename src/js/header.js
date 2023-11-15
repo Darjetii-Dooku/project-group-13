@@ -20,3 +20,14 @@ elements.theme.addEventListener('change', function () {
 });
 
 
+elements.homeButton.addEventListener('click', function () {
+        navigateTo('index.html');
+    });
+
+    elements.shoppingButton.addEventListener('click', function () {
+        navigateTo('shopping-list.html');
+    });
+
+    function navigateTo(url) {
+        window.location.href = url;
+    }
