@@ -5,23 +5,13 @@
     border-radius: 16px;
     background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
     box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.10);
-    margin: 40px 32px 98px 32px;
+    
     
 }
 
-
-@media screen and (min-width: 768px) {
-    #charity-section {
-        margin: 86px 40px 158px 24px;
-    }
-}
 @media screen and (min-width: 1280px) {
     #charity-section {
         width: 356px;
-        margin-top: 86px;
-        margin-right: 40px;
-        margin-bottom:  auto;
-        margin-left: 24px;
 
     }
 }
@@ -150,6 +140,9 @@
 margin: 0 159px 24px 150px;
     }
 } 
+.support-button:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 .support-icon {
     width: 22px;
@@ -162,9 +155,30 @@ margin: 0 159px 24px 150px;
 }
 
 
-/*container 
+/*container */
 
-.support-cat-container {
+.wrapper-cont {
     display: flex;
     flex-direction: column;
-} */
+    padding: 40px 20px 40px 20px;
+    gap: 40px;
+    align-items: center;
+}
+    
+
+@media screen and (min-width: 768px) {
+    .wrapper-cont {
+        padding: 40px 32px 98px 32px;
+        gap: 32px;
+        flex-direction: row;
+        
+        
+    }
+}
+@media screen and (min-width: 1280px) {
+    .wrapper-cont {
+        max-width: 356px;
+        flex-direction: column; 
+        padding: 40px 24px 0 24px;
+    }
+}
