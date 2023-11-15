@@ -11,10 +11,6 @@
     margin-left: 20px;
 }
 
-.dark-theme .Books-best-sellers-text {
-    color: var(--title-text-dark-theme);
-}
-
 .Books-best-sellers-text-span {
     color:var(--main-hover-color);
 }

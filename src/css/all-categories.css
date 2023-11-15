@@ -52,12 +52,6 @@
   font-weight: 700;
 }
 
-.dark-theme .list-category:hover,
-.list-category:focus,
-.list-category:active {
-  color: var(--hover-all-categories);
-}
-
 .list-category {
   color:var(--list-kategory);
   font-size: 16px;
@@ -67,10 +61,6 @@
   letter-spacing: -0.32px;
   height: 17px;
   transition-duration: 0.1s;
-}
-
-.dark-theme .list-category {
-  color: var(--list-category-dark);
 }
 
 /* .all-categories ::-webkit-scrollbar {
