@@ -10,15 +10,12 @@ getBooksById()
       categoryTitle.textContent = `${category.list_name}`.toUpperCase();
 
       const booksList = document.createElement('ul');
-      // add class
       booksList.className = 'filtered-list';
 
       category.books.forEach(book => {
         const bookItem = document.createElement('li');
-        // add class
         bookItem.className = 'filtered-item';
         
-      // update code with add class
         bookItem.innerHTML = `
           <img src="${book.book_image}" alt="${book.title}" />
           <p class="filt-title">${book.title}</p>
