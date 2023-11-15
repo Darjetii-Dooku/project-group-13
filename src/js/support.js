@@ -1,6 +1,6 @@
 function getImageUrl(name) {
     const url = new URL(import.meta.url);
-    url.pathname = `/img/support/${name}.png`;
+    url.pathname = `../img/support/${name}.png`;
     return url.href;
 }
 
