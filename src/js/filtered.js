@@ -6,9 +6,6 @@ getBooksById()
 
     data.forEach(category => {
   
-      const categoryTitle = document.createElement('h4');
-      categoryTitle.textContent = `${category.list_name}`.toUpperCase();
-
       const booksList = document.createElement('ul');
       booksList.className = 'filtered-list';
 
