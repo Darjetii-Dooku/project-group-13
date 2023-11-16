@@ -3,13 +3,8 @@ const elements = {
   body: document.querySelector('body'),
   header: document.querySelector('header'),
   bookshelfIcon: document.getElementById('bookshelf-icon'),
-<<<<<<< HEAD
-  homeButton: document.querySelector('.link-home'),
-  shoppingButton: document.querySelector('.link-shopping')
-=======
   homeButton: document.querySelector('link-home'),
   shoppingButton: document.querySelector('link-shopping')
->>>>>>> parent of ccfa37b (Merge branch 'main' into NewHeader)
 };
 
 elements.theme.addEventListener('change', function () {
