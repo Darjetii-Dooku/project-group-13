@@ -6,6 +6,11 @@
   border-radius: 12px;
   background: #e0e0e0;
 }
+
+.dark-theme{
+ background: #202024;;
+}
+
 /*.all-categories-container {
   margin-top: 40px;
 }*/
@@ -56,11 +61,9 @@
   height: 17px;
   transition-duration: 0.1s;
 }
-
 .dark-theme .inactive-all-categories{
   color: rgba(255, 255, 255, 0.60);
 }
-
 .inactive-all-categories:hover,
 .inactive-all-categories:focus,
 .inactive-all-categories:active {
@@ -77,6 +80,13 @@
   box-sizing: border-box;
   font-weight: 700;
 }
+
+.dark-theme .list-category:hover,
+.list-category:focus,
+.list-category:active{
+  color: #EAC645;
+}
+
 .list-category {
   color: rgba(17, 17, 17, 0.6);
   font-size: 16px;
@@ -86,6 +96,11 @@
   height: 17px;
   transition-duration: 0.1s;
 }
+
+.dark-theme .list-category{
+  color: rgba(255, 255, 255, 0.60);
+}
+
 /* .all-categories ::-webkit-scrollbar {
   width: 8px;
 } */
