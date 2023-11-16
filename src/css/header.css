@@ -31,7 +31,7 @@ header.dark-theme{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:18px 20px;
+  padding:14px 20px;
 }
 
 .menu-toggle {
