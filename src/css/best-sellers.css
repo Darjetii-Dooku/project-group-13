@@ -1,4 +1,9 @@
 /* General styles */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .Books-best-sellers-text {
   text-transform: capitalize;
   font-family: DM Sans;
@@ -14,6 +19,10 @@
 
 .Books-best-sellers-text-span {
   color: #4f2ee8;
+}
+
+.dark-theme .Books-best-sellers-text{
+color: rgba(255, 255, 255, 0.60);
 }
 
 .bs-h3 {
@@ -110,6 +119,10 @@
   margin-bottom: 4px;
 }
 
+.dark-theme .title-book{
+color: #FFF;
+}
+
 .author-book {
   width: 335px;
   display: inline-block;
@@ -137,6 +150,10 @@
   margin-bottom: 40px;
 }
 
+.dark-theme .bs-buttom{
+  background: #202024;
+}
+
 .bs-buttom-name {
   color: #111;
   font-family: DM Sans;
@@ -146,6 +163,10 @@
   line-height: 18px;
   letter-spacing: -0.14px;
   text-transform: uppercase;
+}
+
+.dark-theme .bs-buttom-name{
+  color: #FFF;
 }
 
 /* Styles for mobile phones*/
@@ -226,7 +247,6 @@
 
 .bs-book-list-fil {
   row-gap: 40px;
-  margin-top: 40px;
   margin-bottom: 100px;
 }
     
@@ -324,6 +344,10 @@
     width: 180px;
   }
 
+  .bs-buttom {
+    margin-bottom: 0;
+  }
+
   .bs-book-list-fil .bs-book-item-fil {
     display: block;
   }
@@ -332,6 +356,7 @@
     display: flex;
     row-gap: 40px;
     column-gap: 24px;
+    margin-top: 40px;
     margin-bottom: 32px;
   }
         
