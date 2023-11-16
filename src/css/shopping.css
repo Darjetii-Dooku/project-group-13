@@ -15,10 +15,6 @@
   margin-right: auto;
 }
 
-.dark-theme .shopping-empty-text{
-  color: rgba(255, 255, 255, 0.60);
-}
-
 .shopping-empty-pic {
   width: 265px;
   height: 198px;
@@ -39,11 +35,6 @@
   margin-bottom: 120px;
   margin-top: 40px;
 }
-
-.dark-theme .shopping-ttl{
-  color: #FFF;
-}
-
 .shopping-ttl.span {
   color: #4f2ee8;
 }
@@ -66,11 +57,6 @@
   letter-spacing: -0.64px;
   text-transform: uppercase;
 }
-
-.dark-theme .shopping-book-title{
-  color: #FFF;
-}
-
 .shopping-book-genre {
   color: #b4afaf;
   font-family: DM Sans;
@@ -94,10 +80,6 @@
   font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.56px;
-}
-
-.dark-theme .shopping-book-descrip{
-  color: #FFF;
 }
 
 .shopping-book-author {
