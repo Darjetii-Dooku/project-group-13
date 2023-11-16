@@ -43,10 +43,6 @@
   font-weight: 700;
 }
 
-.dark-theme .active-all-categories{
-  color: #EAC645;
-}
-
 .inactive-all-categories {
   color: rgba(17, 17, 17, 0.6);
   font-size: 16px;
@@ -56,6 +52,7 @@
   height: 17px;
   transition-duration: 0.1s;
 }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -64,6 +61,8 @@
 }
 
 >>>>>>> parent of ccfa37b (Merge branch 'main' into NewHeader)
+=======
+>>>>>>> parent of 48e2da8 (Merge pull request #47 from Darjetii-Dooku/Test)
 .inactive-all-categories:hover,
 .inactive-all-categories:focus,
 .inactive-all-categories:active {
