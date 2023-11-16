@@ -1,92 +1,87 @@
-import { getTopBooks, getCategory } from "./images-api";
+import { getTopBooks } from "./images-api";
+import { openModal } from "./modal-window";
 
-const listCategory = document.querySelector('.book-category-list');
-const bsH1 = document.querySelector('.Books-best-sellers-text');
+getTopBooks()
+  .then(data => {
+    const categoryListContainer = document.querySelector('.book-category-list');
 
-const myBtn = document.querySelector('.scroll-btn');
+    data.forEach(category => {
 
-function renderCategoryBooks(categoryName) {
-  getCategory(categoryName)
-    .then(data => {
-      console.log(data);
-      const listItem = data
-        .map(({ book_image, title, author, _id }) => `
-          <li class="bs-book-item-fil">
-            <img src="${book_image}" alt="${title}" class="bs-book-image" />
-            <p class="title-book">${title}</p>
-            <p class="author-book">${author}</p>
-          </li>`)
-        .join('');
+      const categoryTitle = document.createElement('h3');
+      categoryTitle.textContent = `${category.list_name}`.toUpperCase();
 
-      listCategory.innerHTML = `<ul class="bs-book-list-fil">${listItem}</ul>`;
-    })
-    .catch(error => console.error('Error fetching data:', error));
-}
+      // add class
+      categoryTitle.className = 'bs-h3';
 
+      const booksList = document.createElement('ul');
+      // add class
+      booksList.className = 'bs-book-list';
 
-document.addEventListener('DOMContentLoaded', () => {
-  getTopBooks()
-    .then(data => {
-      const categoryListContainer = document.querySelector('.book-category-list');
+      category.books.forEach(book => {
+        const bookItem = document.createElement('li');
+        // add class
+        bookItem.className = 'bs-book-item';
 
-      data.forEach(category => {
-        const categoryTitle = document.createElement('h3');
-        categoryTitle.textContent = `${category.list_name}`.toUpperCase();
-        categoryTitle.className = 'bs-h3';
+        const bookInfo = {
+          title: book.title,
+          author: book.author,
+          image: book.book_image,
+          description: book.description,
 
-        const booksList = document.createElement('ul');
-        booksList.className = 'bs-book-list';
+        };
 
-        category.books.forEach(book => {
-          const bookItem = document.createElement('li');
-          bookItem.className = 'bs-book-item';
-          bookItem.innerHTML = `
-            <img class="bs-book-image" src="${book.book_image}" alt="${book.title}" />
-            <p class="title-book">${book.title}</p>
-            <p class="author-book">${book.author}</p>
-          `;
-          booksList.appendChild(bookItem);
-        });
-
-        categoryListContainer.appendChild(categoryTitle);
-        categoryListContainer.appendChild(booksList);
-
-        const seeMoreButton = document.createElement('button');
-        seeMoreButton.type = 'button';
-        seeMoreButton.classList.add('bs-buttom');
-        const seeMoreText = document.createElement('span');
-        seeMoreText.textContent = 'See More';
-        seeMoreText.classList.add('bs-buttom-name');
-        seeMoreButton.appendChild(seeMoreText);
-
-        categoryListContainer.appendChild(seeMoreButton);
-
-        seeMoreButton.addEventListener('click', function () {
-          renderCategoryBooks(category.list_name);
-          bsH1.textContent = category.list_name;
+        // update code with add class
+        bookItem.innerHTML = `
+          <img src="${book.book_image}" alt="${book.title}" />
+          <p class="title-book">${book.title}</p>
+          <p class="author-book">${book.author}</p>
+        `;
+        booksList.appendChild(bookItem);
+        bookItem.addEventListener('click', () => {
+          openModal(bookInfo);
         });
       });
-    })
-    .catch(error => console.error('Error fetching data:', error));
 
-  myBtn.addEventListener('click', function () {
-    scrollToTop();
-  });
-});
+      categoryListContainer.appendChild(categoryTitle);
+      categoryListContainer.appendChild(booksList);
 
-function scrollToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+      const seeMoreButton = document.createElement('button');
+      seeMoreButton.type = 'button';
+      // add class
+      seeMoreButton.classList.add('bs-buttom');
 
-window.onscroll = function () {
-  scrollF();
-};
+      // update code with add class
+      // seeMoreButton.textContent = 'See More';
+      const seeMoreText = document.createElement('span');
+      seeMoreText.textContent = 'See More';
+      seeMoreText.classList.add('bs-buttom-name');
+      seeMoreButton.appendChild(seeMoreText);
 
-function scrollF() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    myBtn.style.display = "block";
-  } else {
-    myBtn.style.display = "none";
+      categoryListContainer.appendChild(seeMoreButton);
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+  //Code for scroll button
+  const myBtn = document.querySelector('.scroll-btn');
+
+  window.onscroll = function() {
+      scrollF();
+  };
+  
+  function scrollF() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          myBtn.style.display = "block";
+      } else {
+          myBtn.style.display = "none";
+      }
   }
-}
+  
+  myBtn.addEventListener('click', function() {
+      scrollToTop();
+  });
+  
+  function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+  }
