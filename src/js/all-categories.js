@@ -1,8 +1,10 @@
 import { getCategoryList } from './images-api';
 import { getCategory } from './images-api';
 import { getTopBooks } from './images-api';
+// import './best-sellers.js';
 const allList = document.querySelector(`.all-categories`);
 const listCategory = document.querySelector(`.book-category-list`);
+// .book-category-list .bs-book-list
 const textTitle = document.querySelector(`.Books-best-sellers-text`);
 const activeCategory = document.querySelector(`.active-all-categories`);
 activeCategory.classList.remove('inactive-all-categories');
@@ -27,7 +29,7 @@ allList.addEventListener(`click`, nameCategories);
 
 function nameCategories(e) {
   e.preventDefault();
-  console.log(e.target.textContent);
+
   const categoriesName = e.target.textContent;
   if (categoriesName === `All categories`) {
     activeCategory.classList.remove('inactive-all-categories');
@@ -127,3 +129,7 @@ function nameCategories(e) {
       .catch(err => console.log(err));
   }
 }
+
+getTopBooks().then(data => {
+  console.log(data);
+});
