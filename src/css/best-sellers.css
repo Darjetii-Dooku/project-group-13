@@ -1,4 +1,9 @@
 /* General styles */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .Books-best-sellers-text {
   text-transform: capitalize;
   font-family: DM Sans;
@@ -226,7 +231,6 @@
 
 .bs-book-list-fil {
   row-gap: 40px;
-  margin-top: 40px;
   margin-bottom: 100px;
 }
     
@@ -324,6 +328,10 @@
     width: 180px;
   }
 
+  .bs-buttom {
+    margin-bottom: 0;
+  }
+
   .bs-book-list-fil .bs-book-item-fil {
     display: block;
   }
@@ -332,6 +340,7 @@
     display: flex;
     row-gap: 40px;
     column-gap: 24px;
+    margin-top: 40px;
     margin-bottom: 32px;
   }
         
