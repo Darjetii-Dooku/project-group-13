@@ -23,7 +23,7 @@ getBooksById()
       });
 
       categoryListContainer.appendChild(categoryTitle);
-        categoryListContainer.appendChild(booksList);
+      categoryListContainer.appendChild(booksList);
         });
-  })
-  .catch(error => console.error('Error fetching data:', error));
+    })
+      .catch(error => console.error('Error fetching data:', error));
