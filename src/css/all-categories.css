@@ -61,9 +61,7 @@
   height: 17px;
   transition-duration: 0.1s;
 }
-.dark-theme .inactive-all-categories{
-  color: rgba(255, 255, 255, 0.60);
-}
+
 .inactive-all-categories:hover,
 .inactive-all-categories:focus,
 .inactive-all-categories:active {
