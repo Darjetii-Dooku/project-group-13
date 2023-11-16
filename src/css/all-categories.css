@@ -58,13 +58,10 @@
   transition-duration: 0.1s;
 }
 
-<<<<<<< HEAD
-=======
 .dark-theme .inactive-all-categories{
   color: rgba(255, 255, 255, 0.60);
 }
 
->>>>>>> parent of ccfa37b (Merge branch 'main' into NewHeader)
 .inactive-all-categories:hover,
 .inactive-all-categories:focus,
 .inactive-all-categories:active {
