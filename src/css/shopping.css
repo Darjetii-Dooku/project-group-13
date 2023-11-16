@@ -124,12 +124,14 @@
   width: 32px;
   height: 11px;
   margin-left: 8px;
+  filter: grayscale(100%);
 }
 
 .kindle-pic {
   width: 16px;
   height: 16px;
   margin-right: 8px;
+  filter: grayscale(100%);
 }
 .amazon-kindle {
   display: flex;
@@ -139,6 +141,15 @@
   position: absolute;
   right: 14px;
   bottom: 14px;
+}
+.kindle-pic:hover,
+.kindle-pic:focus {
+  filter: invert(1) grayscale(0%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+}
+
+.amazon-pic:hover,
+.amazon-pic:focus {
+  filter: invert(1) grayscale(0%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
 }
 @media screen and (min-width: 375px) {
   .shopping-list-empty {
