@@ -1,6 +1,6 @@
 import { getCategoryList } from './images-api';
 
-const bookList = document.querySelector('.shopping-book-ul');
+const bookList = document.querySelector('.shopping-list');
 const emptyList = document.querySelector('.shopping-list-empty');
 const deleteBtn = document.querySelector('.shopping-delete-btn');
 
@@ -24,10 +24,14 @@ function getFullCart() {
         `
         <ul>
        <li>
-      <button type= button class="shopping-delete-btn">
-        <svg class="shopping-list-svg" width="18" height="18">
-          <use href="../css/sprite.svg#icon-trash"></use>
-        </svg>
+       < class="shopping-delete-btn">
+        <img
+          class="shopping-list-svg"
+          width="16"
+          height="16"
+          src="..//img/trash.png"
+        />
+  
       </button>
     </li>
     <li><img class="shopping-book-image" src= ${book_image} alt=${title} /></li>
@@ -55,10 +59,10 @@ function getFullCart() {
 
 if (markup.length > 0) {
   bookList.innerHTML = markup;
-  emptyList.style.display = 'none';
+  emptyList.hidden = 'true';
 } else {
   emptyList;
-  emptyList.style.display = 'blocked';
+  emptyList.hidden = 'false';
 }
 
 deleteBtn.addEventListener('click', deleteItem);
@@ -67,6 +71,5 @@ function deleteItem() {
   if (localStorage.contains(markup)) {
     localStorage.removeItem(markup);
   }
-  return getFullCart;
-  emptyList.style.display = 'none';
+  return getFullCart, (emptyList.hidden = 'true');
 }
