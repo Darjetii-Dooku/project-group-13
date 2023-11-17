@@ -116,6 +116,8 @@
   flex-shrink: 0;
   list-style-type: none;
   position: relative;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .shopping-delete-btn {
