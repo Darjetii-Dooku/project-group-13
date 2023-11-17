@@ -1,3 +1,4 @@
+/* відштовхнутися від хедера */
 .all-categories::-webkit-scrollbar {
   width: 8px;
 }
@@ -5,6 +6,14 @@
   border-radius: 12px;
   background: #e0e0e0;
 }
+
+.dark-theme{
+ background: #202024;;
+}
+
+/*.all-categories-container {
+  margin-top: 40px;
+}*/
 .all-categories {
   width: 307px;
   height: 228px;
@@ -32,14 +41,50 @@
     width: 328px;
   }
 }
-.all-categories li:hover,
-.all-categories li:focus,
-.all-categories li:active {
+.active-all-categories {
+  text-transform: uppercase;
+  color: #4f2ee8;
+  box-sizing: border-box;
+  font-weight: 700;
+  height: 20px;
+}
+
+.inactive-all-categories {
+  color: rgba(17, 17, 17, 0.6);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.32px;
+  height: 17px;
+  transition-duration: 0.1s;
+}
+.dark-theme .inactive-all-categories{
+  color: rgba(255, 255, 255, 0.60);
+}
+
+.inactive-all-categories:hover,
+.inactive-all-categories:focus,
+.inactive-all-categories:active {
   text-transform: uppercase;
   color: #4f2ee8;
   box-sizing: border-box;
   font-weight: 700;
 }
+.list-category:hover,
+.list-category:focus,
+.list-category:active {
+  text-transform: uppercase;
+  color: #4f2ee8;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+.dark-theme .list-category:hover,
+.list-category:focus,
+.list-category:active{
+  color: #EAC645;
+}
+
 .list-category {
   color: rgba(17, 17, 17, 0.6);
   font-size: 16px;
@@ -49,6 +94,11 @@
   height: 17px;
   transition-duration: 0.1s;
 }
+
+.dark-theme .list-category{
+  color: rgba(255, 255, 255, 0.60);
+}
+
 /* .all-categories ::-webkit-scrollbar {
   width: 8px;
 } */

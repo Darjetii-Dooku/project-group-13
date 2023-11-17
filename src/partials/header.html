@@ -1,9 +1,41 @@
-<header class="header">
-  <!-- <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./page-2.html" class="nav-link">Page 2</a>
-      </li>
-    </ul>
-  </nav> -->
+<header>
+  <div class="header-underline">
+    <a href="" class="header-icon">
+      <svg class="chain-icon" width="22" height="22">
+        <use href="/css/sprite.svg#icon-logo"></use>
+      </svg>
+      <svg class="black-icon" width="77" height="13">
+        <use href="/css/sprite.svg#icon-Bookshelf" id="bookshelf-icon"></use>
+      </svg>
+      <svg class="white-icon" width="77" height="13">
+        <use href="/css/sprite.svg#icon-Bookshelf_white"></use>
+      </svg>
+    </a>
+    <nav>
+      <div class="navigation">
+        <a href="./index.html" class="link-home active">
+          <span class="home active-description">Home</span>
+        </a>
+        <a href="./shopping.html" class="link-shopping">
+          <span class="shopping-list active-description"> Shopping list</span>
+          <svg class="chain-icon" width="20" height="20">
+            <use href="/css/sprite.svg#icon-uil_cart"></use>
+          </svg>
+        </a>
+      </div>
+    </nav>
+    <div class="theme-switch">
+      <input type="checkbox" id="theme-toggle" />
+      <label for="theme-toggle"></label>
+    </div>
+    <button class="menu-toggle js-open-menu" aria-expanded="false">
+      <!-- aria-controls="mobile-menu" -->
+      <svg class="burger-black" width="28" height="28">
+        <use href="/css/sprite.svg#icon-align-left"></use>
+      </svg>
+      <svg class="burger-white" width="28" height="28">
+        <use href="/css/sprite.svg#icon-align-left_white"></use>
+      </svg>
+    </button>
+  </div>
 </header>

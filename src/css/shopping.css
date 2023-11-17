@@ -14,14 +14,9 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-<<<<<<< Updated upstream
-=======
 .dark-theme .shopping-empty-text {
   color: rgba(255, 255, 255, 0.6);
 }
-
->>>>>>> Stashed changes
 .shopping-empty-pic {
   width: 265px;
   height: 198px;
@@ -42,17 +37,12 @@
   margin-bottom: 120px;
   margin-top: 40px;
 }
-<<<<<<< Updated upstream
-.shopping-ttl.span {
-=======
+.dark-theme .shopping-ttl{
+  color: #FFF;
+}
 
 .dark-theme .shopping-ttl {
   color: #fff;
-}
-
-span {
->>>>>>> Stashed changes
-  color: #4f2ee8;
 }
 
 .shopping-book-image {
@@ -73,14 +63,9 @@ span {
   letter-spacing: -0.64px;
   text-transform: uppercase;
 }
-<<<<<<< Updated upstream
-=======
-
 .dark-theme .shopping-book-title {
   color: #fff;
 }
-
->>>>>>> Stashed changes
 .shopping-book-genre {
   color: #b4afaf;
   font-family: DM Sans;
@@ -105,14 +90,9 @@ span {
   line-height: 18px;
   letter-spacing: -0.56px;
 }
-
-<<<<<<< Updated upstream
-=======
 .dark-theme .shopping-book-descrip {
   color: #fff;
 }
-
->>>>>>> Stashed changes
 .shopping-book-author {
   color: #b4afaf;
 
