@@ -57,15 +57,15 @@ function getFullCart() {
     .join('');
 }
 
-if (markup.length > 0) {
-  bookList.innerHTML = markup;
-  emptyList.hidden = 'true';
-} else {
-  emptyList;
-  emptyList.hidden = 'false';
-}
+// if (markup.length > 0) {
+//   bookList.innerHTML = markup;
+//   emptyList.hidden = 'true';
+// } else {
+//   emptyList;
+//   emptyList.hidden = 'false';
+// }
 
-deleteBtn.addEventListener('click', deleteItem);
+// deleteBtn.addEventListener('click', deleteItem);
 
 function deleteItem() {
   if (localStorage.contains(markup)) {
