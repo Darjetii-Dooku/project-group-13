@@ -1,12 +1,18 @@
 import { getCategoryList } from './images-api';
 import { getCategory } from './images-api';
 import { getTopBooks } from './images-api';
+import { openModal } from './modal-window';
+import { getBooksById } from './images-api';
 // import './best-sellers.js';
 const allList = document.querySelector(`.all-categories`);
 const listCategory = document.querySelector(`.book-category-list`);
+const body = document.querySelector(`main`);
+const modal = document.querySelector(`.modal`);
+
 // .book-category-list .bs-book-list
 const textTitle = document.querySelector(`.Books-best-sellers-text`);
 const activeCategory = document.querySelector(`.active-all-categories`);
+
 activeCategory.classList.remove('inactive-all-categories');
 
 getCategoryList()
@@ -61,15 +67,27 @@ function nameCategories(e) {
             const bookItem = document.createElement('li');
             // add class
             bookItem.className = 'bs-book-item';
+            const bookInfo = {
+              id: book._id,
+              title: book.title,
+              author: book.author,
+              image: book.book_image,
+              description: book.description,
+              buy_links: book.buy_links[1],
+            };
 
             // update code with add class
             bookItem.innerHTML = `
-          <img class="bs-book-image" src="${book.book_image}" alt="${book.title}"" />
+          <img id="${book._id}" src="${book.book_image}" alt="${book.title}" />
           <p class="title-book">${book.title}</p>
+          
           <p class="author-book">${book.author}</p>
         `;
 
             booksList.appendChild(bookItem);
+            // bookItem.addEventListener('click', () => {
+            //   openModal(bookInfo.id);
+            // });
           });
 
           categoryListContainer.appendChild(categoryTitle);
@@ -116,20 +134,43 @@ function nameCategories(e) {
               title,
               author,
               _id,
-            }) => `<li id="${_id}" class="bs-book-item">
-      <img class="bs-book-image" src="${book_image}" alt="${title}" />
+            } = listItem) => `<li  class="bs-book-item">
+      <img id="${_id}" class="bs-book-image" src="${book_image}" alt="${title}" />
       <p class="title-book">${title}</p>
       <p class="author-book">${author}</p>
     </li>`
           )
           .join(``);
-
-        return (listCategory.innerHTML = listItem);
+        console.dir(data);
+        listCategory.innerHTML = listItem;
+        // listCategory.addEventListener('click', () => {
+        //   openModal(bookInfo.id);
+        // });
       })
       .catch(err => console.log(err));
   }
 }
 
-getTopBooks().then(data => {
-  console.log(data);
-});
+// listCategory.addEventListener(`click`, openToModal);
+// function openToModal(e) {
+//   const id = e.target.id;
+
+//   openModal(id);
+// }
+//   const id = e.currentTarget.children;
+
+//   openModal;
+// });
+// function openToModel(e) {
+//   e.preventDefault();
+//   const byId = e.target.id;
+//   console.log(byId);
+//   if (byId) {
+//     getBooksById(byId)
+//       .then(idBook => {
+//         const { title, author, book_image, description } = idBook;
+//         return (modal.innerHTML = openModal(idBook));
+//       })
+//       .catch(err => console.log(err));
+//   }
+// }

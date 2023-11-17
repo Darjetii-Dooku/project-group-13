@@ -1,15 +1,15 @@
-import "./js/images-api";
+import './js/images-api';
 
-import "./js/images-api";
+import './js/shopping';
 
-import "./js/header";
+import './js/header';
 
-import "./js/all-categories";
+import './js/all-categories';
 
-import "./js/support";
+import './js/support';
 
-import "./js/best-sellers";
+import './js/best-sellers';
 
-import "./js/filtered";
+import './js/filtered';
 
-import "./js/modal-window";
+import './js/modal-window';
