@@ -1,4 +1,4 @@
-import"./assets/header-7c7bf7d1.js";document.querySelector(".shopping-book-ul");document.querySelector(".shopping-delete-btn");if(localStorage.getItem("shoppingList")!==null){document.querySelector(".shopping-list");const o=document.querySelector(".shopping-list-empty");o.style.display="none",c()}function c(){const o=JSON.parse(localStorage.getItem("shoppingList")),l=document.querySelector(".shopping-book-ul");console.log(l),l.innerHTML=o.map(({id:s,title:i,author:e,book_image:n,description:t,buy_links:p})=>`
+import"./assets/header-7c7bf7d1.js";document.querySelector(".shopping-book-ul");document.querySelector(".shopping-delete-btn");if(localStorage.getItem("shoppingList")!==null){const l=document.querySelector(".shopping-list"),o=document.querySelector(".shopping-list-empty");o.style.display="none",l.style.display="flex",c()}function c(){const l=JSON.parse(localStorage.getItem("shoppingList")),o=document.querySelector(".shopping-book-ul");console.log(o),o.innerHTML=l.map(({id:i,title:s,author:e,book_image:t,description:n,buy_links:p})=>`
     <ul>
       <li>
         <button class="shopping-delete-btn">
@@ -10,9 +10,9 @@ import"./assets/header-7c7bf7d1.js";document.querySelector(".shopping-book-ul");
           />
         </button>
       </li>
-      <li><img class="shopping-book-image" src="${n}" alt="${i}" /></li>
-      <li class="shopping-book-title">${i} ${s}</li>
-      <li class="shopping-book-descrip"><p>${t}</p></li>
+      <li><img class="shopping-book-image" src="${t}" alt="${s}" /></li>
+      <li class="shopping-book-title">${s} ${i}</li>
+      <li class="shopping-book-descrip"><p>${n}</p></li>
       <li class="shopping-book-author">${e}</li>
       <li class="amazon-kindle">
         <a class='kindle-link' href='${p}'>
