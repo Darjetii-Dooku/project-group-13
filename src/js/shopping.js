@@ -40,9 +40,12 @@ const BOOKS_STORAGE = 'shoppingList';
 // console.log(getCard())
 
 function getCard() {
+  if (!localStorage.getItem('shoppingList')) {
+    return
+  }
   const localBooks = JSON.parse(localStorage.getItem('shoppingList'));
   console.log(localBooks);
-  const bookList = document.querySelector('.shopping-list-empty');
+  const bookList = document.querySelector('.shopping-book-ul');
   console.log(bookList);
   bookList.innerHTML = localBooks.map(({ id, title, author, book_image, description, buy_links }) => `
     <ul>
@@ -74,6 +77,7 @@ function getCard() {
   `).join('')
 }
 getCard()
+
 
 
 // function getFullCart() {
