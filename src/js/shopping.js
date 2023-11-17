@@ -39,8 +39,8 @@ const BOOKS_STORAGE = 'shoppingList';
 // }
 // console.log(getCard())
 if (localStorage.getItem('shoppingList') !== null) {
-  const list = document.querySelector('.shopping-list');
-  const empty = document.querySelector('.shopping-list-empty')
+  const list = document.querySelector('.shopping-book-ul');
+  const empty = document.querySelector('.shopping-list-empty');
   empty.style.display = 'none'
   list.style.display = 'flex'
   getCard()
