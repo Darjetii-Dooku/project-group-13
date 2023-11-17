@@ -8,7 +8,7 @@ const byModal = document.querySelector(`.modal`);
 export function openModal(bookInfo) {
   getBooksById(bookInfo)
     .then(idBook => {
-      const { title, author, book_image, description, buy_links } = idBook;
+      const { title, author, book_image, description, buy_links, _id } = idBook;
       byModal.innerHTML = `<span class="close" id="closeModalBtn">&times;</span>
         <div class="modal-content">
           <img src="${book_image}" class="modal-image" alt="${title}" />
@@ -35,8 +35,8 @@ export function openModal(bookInfo) {
       }
 
       function addToShoppingList() {
-        // Получите данные о книге и добавьте их в локальное хранилище
         const bookData = {
+          id: _id,
           title: title,
           author: author,
           image: book_image,
@@ -45,17 +45,14 @@ export function openModal(bookInfo) {
           // list_name: list_name,
         };
         console.dir(bookData);
-        // Получите текущий список книг из локального хранилища
         const shoppingList =
           JSON.parse(localStorage.getItem('shoppingList')) || [];
 
-        // Добавьте новую книгу
         shoppingList.push(bookData);
 
-        // Сохраните обновленный список книг в локальное хранилище
         localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
 
-        // Закройте модальное окно
+
         closeModal();
       }
 
