@@ -118,6 +118,7 @@
   position: relative;
   flex-direction: column;
   overflow: hidden;
+  display: none;
 }
 
 .shopping-delete-btn {
@@ -219,7 +220,6 @@
   }
 
   .shopping-book-ul {
-    display: flex;
     width: 704px;
     height: 213px;
     margin-left: 32px;

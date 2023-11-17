@@ -42,6 +42,7 @@ if (localStorage.getItem('shoppingList') !== null) {
   const list = document.querySelector('.shopping-list');
   const empty = document.querySelector('.shopping-list-empty')
   empty.style.display = 'none'
+  list.style.display = 'flex'
   getCard()
   
 }
