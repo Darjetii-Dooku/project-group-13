@@ -1,7 +1,5 @@
 import './js/images-api';
 
-import './js/shopping';
-
 import './js/header';
 
 import './js/all-categories';

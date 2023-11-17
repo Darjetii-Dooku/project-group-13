@@ -1,7 +1,7 @@
 import { getCategoryList } from './images-api';
 
 const bookList = document.querySelector('.shopping-book-ul');
-const emptyList = document.querySelector('.shopping-list-empty');
+
 const deleteBtn = document.querySelector('.shopping-delete-btn');
 
 const BOOKS_STORAGE = 'shoppingList';
@@ -38,15 +38,23 @@ const BOOKS_STORAGE = 'shoppingList';
   
 // }
 // console.log(getCard())
+if (localStorage.getItem('shoppingList') !== null) {
+  const list = document.querySelector('.shopping-list');
+  
+  getCard()
+  
 
+}
 function getCard() {
-  if (!localStorage.getItem('shoppingList')) {
-    return
-  }
+  // const emptyList = document.querySelector('.shopping-list-empty');
+  
+  
+
   const localBooks = JSON.parse(localStorage.getItem('shoppingList'));
-  console.log(localBooks);
+  
   const bookList = document.querySelector('.shopping-book-ul');
   console.log(bookList);
+  bookList.
   bookList.innerHTML = localBooks.map(({ id, title, author, book_image, description, buy_links }) => `
     <ul>
       <li>
@@ -76,7 +84,9 @@ function getCard() {
     </ul>
   `).join('')
 }
-getCard()
+
+
+
 
 
 
