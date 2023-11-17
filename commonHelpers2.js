@@ -1,2 +1,0 @@
-import"./assets/support-c9d5cfe9.js";const t=document.querySelector(".shopping-list"),e=document.querySelector(".shopping-list-empty"),n=document.querySelector(".shopping-delete-btn");markup.length>0?(t.innerHTML=markup,e.hidden="true"):e.hidden="false";n.addEventListener("click",o);function o(){return localStorage.contains(markup)&&localStorage.removeItem(markup),e.hidden="true"}
-//# sourceMappingURL=commonHelpers2.js.map
