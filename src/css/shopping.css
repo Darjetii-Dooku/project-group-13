@@ -15,6 +15,13 @@
   margin-right: auto;
 }
 
+<<<<<<< Updated upstream
+=======
+.dark-theme .shopping-empty-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+>>>>>>> Stashed changes
 .shopping-empty-pic {
   width: 265px;
   height: 198px;
@@ -35,7 +42,16 @@
   margin-bottom: 120px;
   margin-top: 40px;
 }
+<<<<<<< Updated upstream
 .shopping-ttl.span {
+=======
+
+.dark-theme .shopping-ttl {
+  color: #fff;
+}
+
+span {
+>>>>>>> Stashed changes
   color: #4f2ee8;
 }
 
@@ -57,6 +73,14 @@
   letter-spacing: -0.64px;
   text-transform: uppercase;
 }
+<<<<<<< Updated upstream
+=======
+
+.dark-theme .shopping-book-title {
+  color: #fff;
+}
+
+>>>>>>> Stashed changes
 .shopping-book-genre {
   color: #b4afaf;
   font-family: DM Sans;
@@ -82,6 +106,13 @@
   letter-spacing: -0.56px;
 }
 
+<<<<<<< Updated upstream
+=======
+.dark-theme .shopping-book-descrip {
+  color: #fff;
+}
+
+>>>>>>> Stashed changes
 .shopping-book-author {
   color: #b4afaf;
 
@@ -104,20 +135,27 @@
   gap: 20px;
   flex-shrink: 0;
   list-style-type: none;
+  position: relative;
 }
 
 .shopping-delete-btn {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   position: absolute;
   right: 24px;
   top: 24px;
-  color: #4f2ee8;
   border-radius: 50%;
-  border: #4f2ee8;
+  border: none;
+  background-color: #4f2ee8;
+  stroke: #fff;
+  transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: center;
+  background-image: url(/src/img/trash.png);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .shopping-list-svg {
-  fill: #fff;
+  stroke: #fff;
 }
 
 .amazon-pic {
@@ -232,8 +270,9 @@
     font-size: 48px;
     line-height: 52px;
     letter-spacing: -1.92px;
-    margin-left: 40px;
     margin-bottom: 140px;
+    text-align: center;
+    margin-top: 40px;
   }
   .shopping-empty-pic {
     width: 322px;
