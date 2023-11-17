@@ -389,7 +389,9 @@ html {
 .scroll-icon {
   width: 24px;
   height: 24px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
+  padding: 5.569px;
+
 }
 
 #scroll-btn:hover .scroll-icon {

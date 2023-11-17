@@ -109,13 +109,20 @@ function scrollF() {
   } else {
     myBtn.style.display = 'none';
   }
+  function getImageUrl(name) {
+    const url = new URL(import.meta.url);
+    url.pathname = `../img/support/${name}.png`;
+    return url.href;
+}
+const scrollUrl = getImageUrl(`scroll-b`);
+const scrollElement = document.createElement('img');
+scrollElement.src = scrollUrl;
+scrollElement.classList.add('scroll-icon');
+scrollElement.alt = 'scroll-button';
+scrollElement.width = '100%';
+scrollElement.height = '100%';
+const scrollContainer = document.getElementById('scroll-btn'); 
+scrollContainer.appendChild(scrollElement);
 }
 
-myBtn.addEventListener('click', function () {
-  scrollToTop();
-});
 
-function scrollToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
