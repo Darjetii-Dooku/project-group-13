@@ -40,7 +40,10 @@ const BOOKS_STORAGE = 'shoppingList';
 // console.log(getCard())
 
 function getCard() {
-  const localBooks = JSON.parse(localStorage.getItem('shoppingList') ?? []);
+  if (!localStorage.getItem('shoppingList')) {
+    return
+  }
+  const localBooks = JSON.parse(localStorage.getItem('shoppingList'));
   console.log(localBooks);
   const bookList = document.querySelector('.shopping-book-ul');
   console.log(bookList);
@@ -73,6 +76,7 @@ function getCard() {
     </ul>
   `).join('')
 }
+getCard()
 
 
 
