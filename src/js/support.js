@@ -89,7 +89,8 @@ const charities = [
 
             const charityLink = document.createElement('a');
             charityLink.classList.add('charity-link');
-            charityLink.href = charity.url;
+          charityLink.href = charity.url;
+           charityLink.target = '_blank';
 
             const supportImg = document.createElement('img');
             supportImg.classList.add('charity-logo');

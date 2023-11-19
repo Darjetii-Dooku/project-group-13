@@ -49,6 +49,10 @@
   height: 20px;
 }
 
+.dark-theme .active-all-categories{
+  color: #eac645;
+}
+
 .inactive-all-categories {
   color: rgba(17, 17, 17, 0.6);
   font-size: 16px;
