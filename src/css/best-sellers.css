@@ -10,11 +10,10 @@
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
-  line-height: 38px;
+  line-height: 1.19;
   letter-spacing: -1.28px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  margin-left: 20px;
+  padding: 0 0 40px 20px;
+  color: #111;
 }
 
 .Books-best-sellers-text-span {
@@ -48,7 +47,7 @@ color: rgba(255, 255, 255, 0.60);
     lightgray -4.635px -16px / 102.522% 106.839% no-repeat;
   margin-bottom: 14px;
   position: relative;
-  max-width: 100%;
+  /* max-width: 100%; */
 
 }
 
@@ -58,10 +57,9 @@ color: rgba(255, 255, 255, 0.60);
   flex-direction: column;
   min-width: 335px;
   max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  padding: 0 20px;
 }
 
 /* ul */
@@ -90,6 +88,7 @@ color: rgba(255, 255, 255, 0.60);
   align-items: flex-start;
   margin-bottom: 8px;
   height: 100%;
+  cursor: pointer;
 }
 .bs-book-item-fil {
     display: inline-flex;
@@ -115,7 +114,7 @@ color: rgba(255, 255, 255, 0.60);
   line-height: 18px;
   letter-spacing: -0.64px;
   text-transform: uppercase;
-  margin-top: 0px;
+  margin-top: 14px;
   margin-bottom: 4px;
 }
 
@@ -136,8 +135,7 @@ color: #FFF;
   font-weight: 400;
   line-height: 14px;
   letter-spacing: -0.48px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  
 }
 
 .bs-buttom {
@@ -204,12 +202,12 @@ color: #FFF;
 @media screen and (min-width: 768px) {
 .Books-best-sellers-text {
   font-size: 48px;
-  line-height: 52px;
+  line-height: 1.08;
   letter-spacing: -1.92px;
-  margin-top: 98px;
-  margin-bottom: 40px;
-  margin-left: 32px;
-  max-width: 768px;
+  padding-left: 32px;
+  padding-bottom: 40px;
+  
+  
 }
 
 .bs-h3 {
@@ -239,7 +237,7 @@ color: #FFF;
 }
 
 .bs-book-list {
-  display: flex;
+
   flex-wrap: nowrap;
   gap: 25px;
   margin-bottom: 20px;
@@ -276,13 +274,19 @@ color: #FFF;
 
 /* Styles for desctop*/
 @media screen and (min-width: 1440px) {
+
+  .general-container {
+    display: flex;
+  }
   .Books-best-sellers-text {
     font-size: 48px;
     line-height: 52px;
     letter-spacing: -1.92px;
-    margin-top: 40px;
+    padding: 0;
+    /* margin-top: 40px;
     margin-bottom: 0px;
-    margin-left: 40px;
+    margin-left: 40px; */
+    
   }
 
   .bs-h3 {
@@ -301,7 +305,7 @@ color: #FFF;
   }
 
   .bs-book-image {
-    width: auto;
+    /* width: auto; */
     min-width: 180px;
     height: 256px;
     border-radius: 8px;
