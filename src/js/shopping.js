@@ -17,7 +17,6 @@ function getFullCart() {
         title,
         description,
         author,
-        amazon_product_url,
         genre,
         buy_links,
       }) =>
@@ -40,23 +39,29 @@ function getFullCart() {
     <li class="shopping-book-descrip"><p>${description}</p></li>
     <li class="shopping-book-author">${author}</li>
     <li class="amazon-kindle">
-     <a class= amazon-link, href = '${amazon_product_url}'><img
-        class="amazon-pic"
-        src="../img/amazon.png"
-        style="background-color: transparent"
-        alt="amazon"
-      /> </a>
-      < class= 'kindle-link' href='${buy_links}'><img
-        class="kindle-pic"
-        src="../img/kindle.png"
-        style="background-color: transparent"
-        alt="kindle"
+     <a href="${ buy_links[0].url}" target="_blank" class="amazon-link"> <img
+                    src="../img/amazonx1.png"
+                    srcset="../img/amazonx2.png 2x"
+                    alt="Amazon"
+                    width="32"
+                    height="11"
+                    class="amazon-pic"
+                  />
+                </a>
+<a href="${buy_links[1].url}" target="_blank" class="apple-book-link book-link ">
+                  <img
+                    src="../img/kindlex1.png"
+                    srcset="../img/kindlex2.png 2x"
+                    alt="kindle books"
+                    width="16"
+                    class="kindle-pic"
       /> </a>
     </li></ul>`
     )
     .join('');
 }
 
+<<<<<<< Updated upstream
 if (markup.length > 0) {
   bookList.innerHTML = markup;
   emptyList.hidden = 'true';
@@ -66,6 +71,16 @@ if (markup.length > 0) {
 }
 
 deleteBtn.addEventListener('click', deleteItem);
+//if (markup.length > 0) {
+// bookList.innerHTML = markup;
+// emptyList.hidden = 'true';
+//} else {
+// emptyList;
+// emptyList.hidden = 'false';
+//}
+
+//deleteBtn.addEventListener('click', deleteItem);
+>>>>>>> Stashed changes
 
 function deleteItem() {
   if (localStorage.contains(markup)) {
@@ -73,3 +88,11 @@ function deleteItem() {
   }
   return getFullCart, (emptyList.hidden = 'true');
 }
+
+//if (localStorage.contains(markup)) {
+// emptyList.hidden = 'true';
+// else {
+//   bookList.hidden = 'false';
+
+// }
+//}
