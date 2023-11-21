@@ -21,29 +21,34 @@
     justify-content: center;
     align-items: center;
     gap: 12px;
-    padding: 24px 87px 42px 40px;
+    padding: 24px 0 40px 40px;
 }
 
-@media screen and (min-width: 1440px) {
-    .support-section {
-        padding: 24px 108px 42px 40px;;
-    } 
-}
+
 
 .support-header {
-    line-height: 1.16;
-    font-size: 24px;
+    font-family: DM Sans;
+    line-height: 1.1;
+    font-size: 22px;
     font-style: normal;
-    letter-spacing: -0.96px;
+    letter-spacing: -0.88px;
     color: #FFF;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+    .support-header {
+        font-size: 24px;
+        letter-spacing: -0.96px;
+        line-height: 1.16;
+    }
 }
 
 .support-logo {
     width: 20px;
     height: 32px;
 }
-.charity-list-container 
-{
+.charity-list-container {
     height: 292px;
     width: auto;
     padding-left: 40px;
@@ -128,7 +133,7 @@
     padding: 0;
     border: none;
     cursor: pointer;
-    padding: 8px 8px;
+    padding: 6px
 }
 @media screen and (min-width: 768px) {
     .support-button {
@@ -145,8 +150,8 @@ margin: 0 159px 24px 150px;
 }
 
 .arrow-icon {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     display: inline-block; 
     transition: transform 0.3s ease;
 }
@@ -160,7 +165,7 @@ margin: 0 159px 24px 150px;
 .wrapper-cont {
     display: flex;
     flex-direction: column;
-    padding: 40px 20px 40px 20px;
+    padding: 40px 20px 20px 20px;
     gap: 40px;
     align-items: center;
 }
@@ -168,7 +173,7 @@ margin: 0 159px 24px 150px;
 
 @media screen and (min-width: 768px) {
     .wrapper-cont {
-        padding: 40px 32px 98px 32px;
+        padding: 40px 32px 49px 32px;
         gap: 32px;
         flex-direction: row;
         
@@ -179,6 +184,6 @@ margin: 0 159px 24px 150px;
     .wrapper-cont {
         max-width: 356px;
         flex-direction: column; 
-        padding: 40px 24px 0 24px;
+        padding: 40px 0 0 24px;
     }
 }
