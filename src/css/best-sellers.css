@@ -111,13 +111,7 @@ color: #FFF;
 }
 
 .author-book {
-  width: 335px;
-  display: inline-block;
-  overflow: hidden;
   color: #B4AFAF;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-family: DM Sans;
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -316,4 +310,54 @@ html {
 
 #scroll-btn:hover {
   box-shadow: 0 0 20px rgb(79, 46, 232);
+}
+
+
+.overlay-text {
+  display: none;
+}
+
+
+/* Overlay */
+@media screen and (min-width: 1440px) {
+  .bs-card-img{
+    width: 100%;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 8px 8px;
+    width: 100%;
+    background-color: #EAC645;
+    height: 70px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    
+  }
+
+  .bs-book-item:hover .overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .overlay-text{
+    color: #111;
+    font-family: DMSans-Regular;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+    
+  }
 }
