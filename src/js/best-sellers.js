@@ -33,11 +33,14 @@ getTopBooks()
 
         // update code with add class
         bookItem.innerHTML = `
+        <div class="bs-card-img">
           <img id="${book._id}" src="${book.book_image}" alt="${book.title}" />
+          <div class="overlay">
+            <p class="overlay-text">quick view</p>
+          </div>
+          </div>
           <p class="title-book">${book.title}</p>
-          
           <p class="author-book">${book.author}</p>
-
         `;
         booksList.appendChild(bookItem);
         // bookItem.addEventListener('click', () => {
